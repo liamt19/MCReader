@@ -7,6 +7,7 @@ namespace MCReader.NBT.Tags
         public int PayloadSize() => 1;
         private object _data;
         private string _name;
+        public int TagID() => (int)TagType.TAG_Byte_Array;
 
         public object Data()
         {

@@ -5,6 +5,7 @@
         public int PayloadSize() => 4;
         private object _data;
         private string _name;
+        public int TagID() => (int)TagType.TAG_Float;
 
         public object Data()
         {

@@ -5,6 +5,7 @@
         public int PayloadSize() => 0;
         private object _data;
         private string _name;
+        public int TagID() => (int)TagType.TAG_String;
 
         public object Data()
         {
@@ -30,7 +31,16 @@
 
         public override string ToString()
         {
-            return (_name != null && _name.Length > 0 ? (_name + ": ") : string.Empty) + _data.ToString();
+            return _name + ": \"" + _data.ToString() + "\"";
+
+            if (_name != null && _name.Length > 0)
+            {
+                return _name + ": \"" + _data.ToString() + "\"";
+            }
+            else
+            {
+                return ": \"" + _data.ToString() + "\"";
+            }
         }
     }
 }

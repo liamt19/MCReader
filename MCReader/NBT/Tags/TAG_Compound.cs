@@ -8,6 +8,8 @@ namespace MCReader.NBT.Tags
         public int PayloadSize() => 0;
         private object _data;
         private string _name;
+        public int TagID() => (int)TagType.TAG_Compound;
+
 
         public bool IsRoot = false;
 
@@ -47,28 +49,44 @@ namespace MCReader.NBT.Tags
             this._data = data;
         }
 
-        public override string ToString()
+        public string ToStringLevel(int level)
         {
             List<INBTTag> d = (List<INBTTag>)_data;
 
             StringBuilder sb = new StringBuilder();
 
+            sb.Append('\t', level);
+
             if (IsRoot && _name.Length == 0)
             {
-                sb.Append("root: [");
+                sb.Append("root: [" + Environment.NewLine);
+            }
+            else if (_name != null)
+            {
+                sb.Append(_name + ": [" + Environment.NewLine);
             }
             else
             {
-                sb.Append(_name + ": [");
+                sb.Append("Compound: [" + Environment.NewLine);
             }
-            
+
             for (int i = 0; i < d.Count; i++)
             {
-                sb.Append(d[i].ToString() + ", ");
+                if (d[i].TagID() != (int) TagType.TAG_Compound)
+                {
+                    sb.Append('\t', level + 1);
+                }
+                sb.Append(d[i].ToString() + ", " + Environment.NewLine);
             }
-            sb.Remove(sb.Length - 2, 2);
+            sb.Remove(sb.Length - 2 - Environment.NewLine.Length, 2 + Environment.NewLine.Length);
+            sb.Append('\t', level);
             sb.Append("]");
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return ToStringLevel(0);
         }
     }
 }

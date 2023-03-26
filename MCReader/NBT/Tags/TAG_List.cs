@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Reflection.Emit;
+using System.Text;
 
 namespace MCReader.NBT.Tags
 {
@@ -7,6 +8,7 @@ namespace MCReader.NBT.Tags
         public int PayloadSize() => 0;
         private object _data;
         private string _name;
+        public int TagID() => (int)TagType.TAG_List;
 
         public object Data()
         {
@@ -30,19 +32,72 @@ namespace MCReader.NBT.Tags
             this._data = data;
         }
 
-        public override string ToString()
+        public string ToStringLevel(int level)
         {
             List<INBTTag> d = (List<INBTTag>)_data;
 
             StringBuilder sb = new StringBuilder();
-            sb.Append(_name + ": [");
-            for (int i = 0; i < d.Count; i++)
+            if (_name != null)
             {
-                sb.Append(d[i].ToString() + ", ");
+                sb.Append(_name + ": [");
             }
-            sb.Remove(sb.Length - 2, 2);
+            else
+            {
+                sb.Append("List: [");
+            }
+
+            if (d.Count > 0 && d[0].TagID() == (int)TagType.TAG_List)
+            {
+                sb.Append(Environment.NewLine);
+                sb.Append('\t', level);
+                for (int i = 0; i < d.Count; i++)
+                {
+                    sb.Append(((TAG_List)d[i]).ToStringLevel(level + 1) + ", ");
+                }
+            }
+            else if (d.Count > 0 && d[0].TagID() == (int)TagType.TAG_Compound)
+            {
+                sb.Append(Environment.NewLine);
+                sb.Append('\t', level);
+                for (int i = 0; i < d.Count; i++)
+                {
+                    sb.Append(((TAG_Compound)d[i]).ToString() + ", ");
+                }
+            }
+            else
+            {
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i].TagID() == (int)TagType.TAG_Int_Array)
+                    {
+                        sb.Append(((TAG_Int_Array)d[i]).ToString());
+                    }
+                    else if (d[i].TagID() == (int)TagType.TAG_Long_Array)
+                    {
+                        sb.Append(((TAG_Long_Array)d[i]).ToString());
+                    }
+                    else if (d[i].Name() != null)
+                    {
+                        sb.Append(d[i].Name() + ": " + d[i].Data().ToString() + ", ");
+                    }
+                    else
+                    {
+                        sb.Append(d[i].Data().ToString() + ", ");
+                    }
+                }
+            }
+
+            if (d.Count > 0)
+            {
+                sb.Remove(sb.Length - 2, 2);
+            }
             sb.Append("]");
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return ToStringLevel(0);
         }
     }
 }

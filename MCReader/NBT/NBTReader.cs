@@ -27,7 +27,7 @@ namespace MCReader.NBT
             {
                 INBTTag tag = ReadNext();
                 list.Add(tag);
-                Log("Added tag " + tag.ToString());
+                //Log("Added tag " + tag.ToString());
             }
 
             return list;
@@ -129,7 +129,7 @@ namespace MCReader.NBT
             int size = ReadInt();
             if (size == 0)
             {
-                Log("In ReadList for id " + id + " and payload " + payload + ", size is 0?");
+                //Log("In ReadList for id " + id + " and payload " + payload + ", size is 0?");
             }
             List<INBTTag> list = new List<INBTTag>(size);
             for (int i = 0; i < size; i++)

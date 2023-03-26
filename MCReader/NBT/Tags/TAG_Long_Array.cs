@@ -7,7 +7,7 @@ namespace MCReader.NBT.Tags
         public int PayloadSize() => 8;
         private object _data;
         private string _name;
-
+        public int TagID() => (int)TagType.TAG_Long_Array;
         public object Data()
         {
             return _data;
@@ -35,10 +35,24 @@ namespace MCReader.NBT.Tags
             TAG_Long[] d = (TAG_Long[])_data;
 
             StringBuilder sb = new StringBuilder();
-            sb.Append(_name + ": [");
+            if (_name != null)
+            {
+                sb.Append(_name + ": [");
+            }
+            else
+            {
+                sb.Append("Long array: [");
+            }
             for (int i = 0; i < d.Length; i++)
             {
-                sb.Append(d[i].ToString() + ", ");
+                if (d[i].Name() != null)
+                {
+                    sb.Append(d[i].Name() + ": " + d[i].Data() + ", ");
+                }
+                else
+                {
+                    sb.Append(d[i].Data() + ", ");
+                }
             }
             sb.Remove(sb.Length - 2, 2);
             sb.Append("]");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MCReader.NBT.Tags
 {
@@ -13,6 +14,7 @@ namespace MCReader.NBT.Tags
         public int PayloadSize();
         public object Data();
         public string Name();
+        public int TagID();
 
         public void Read(NBTReader r, bool noName = false);
 
@@ -78,6 +80,125 @@ namespace MCReader.NBT.Tags
             }
             return (byte) ret;
         }
+
+
+        private static void FormatNBT_Rec(List<INBTTag> list, StringBuilder sb, int level)
+        {
+            
+            foreach (INBTTag tag in list)
+            {
+                if (tag.Name() == "sections")
+                {
+                    int a = 0;
+                }
+                sb.Append('\t', level);
+
+                if (tag.TagID() == (int)TagType.TAG_List)
+                {
+                    var t = ((TAG_List)tag);
+                    if (false)
+                    {
+                        if (t.Name() != null)
+                        {
+                            sb.Append("List: [");
+                        }
+                        else
+                        {
+                            sb.Append(t.Name() + ": [");
+                        }
+
+                        foreach (var item in (List<INBTTag>)t.Data())
+                        {
+                            sb.Append(item.Data() + ", ");
+                        }
+                        sb.Remove(sb.Length - 2, 2);
+                        sb.Append("]");
+                    }
+                    sb.Append(t.ToStringLevel(level + 1));
+                }
+                else if (tag.TagID() == (int)TagType.TAG_Int_Array)
+                {
+                    var t = ((TAG_Int_Array)tag);
+                    if (false)
+                    {
+                        if (t.Name() != null)
+                        {
+                            sb.Append(t.Name() + ": {");
+                        }
+                        else
+                        {
+                            sb.Append("Int array: [");
+                        }
+
+                        foreach (var item in (TAG_Int[])t.Data())
+                        {
+                            sb.Append(item.Data() + ", ");
+                        }
+                        sb.Remove(sb.Length - 2, 2);
+                        sb.Append("]");
+                    }
+
+                    sb.Append(t.ToString());
+                }
+                else if (tag.TagID() == (int) TagType.TAG_Long_Array)
+                {
+                    var t = ((TAG_Long_Array)tag);
+                    
+                    if (false)
+                    {
+                        if (t.Name() != null)
+                        {
+                            sb.Append(t.Name() + ": [");
+                        }
+                        else
+                        {
+                            sb.Append("Long array: [");
+                        }
+
+                        foreach (var item in (TAG_Long[])t.Data())
+                        {
+                            sb.Append(item.Data() + ", ");
+                        }
+                        sb.Remove(sb.Length - 2, 2);
+                        sb.Append("]");
+                    }
+
+                    sb.Append(t.ToString());
+                }
+                else if (tag.TagID() == (int)TagType.TAG_Compound)
+                {
+                    var t = ((TAG_Compound)tag); 
+                    
+                    if (t.Name() != null)
+                    {
+                        sb.Append(t.Name() + ": {" + Environment.NewLine);
+                    }
+                    else
+                    {
+                        sb.Append("Compound: {" + Environment.NewLine);
+                    }
+
+                    FormatNBT_Rec((List<INBTTag>)t.Data(), sb, level + 1);
+
+                    sb.Append('\t', level);
+                    sb.Append("}" + Environment.NewLine);
+                }
+                else
+                {
+                    sb.Append(tag.Name() + ": " + tag.Data().ToString());
+                }
+
+                sb.Append(Environment.NewLine);
+            }
+        }
+
+        public static string FormatNBT(List<INBTTag> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            FormatNBT_Rec(list, sb, 0);
+            return sb.ToString();
+        }
+
     }
 
     public enum TagType

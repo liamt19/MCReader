@@ -23,6 +23,15 @@ namespace MCReader
             Debug.WriteLine(s.ToString());
         }
 
+
+
+        //  https://stackoverflow.com/questions/14401270/efficient-way-to-read-big-endian-data-in-c-sharp
+        public static int ToInt32BigEndian(byte[] buf, int i)
+        {
+            return (buf[i] << 24) | (buf[i + 1] << 16) | (buf[i + 2] << 8) | buf[i + 3];
+        }
+
+
         public static Stream OpenFile(string file)
         {
             Stream input;
@@ -49,6 +58,16 @@ namespace MCReader
             decompressor.CopyTo(memoryStream);
             memoryStream.Position = 0;
             return memoryStream;
+        }
+
+        public static Stream UnzipArray(byte[] arr)
+        {
+            using MemoryStream memoryStream = new MemoryStream(arr);
+            using ZLibStream decompressor = new ZLibStream(memoryStream, CompressionMode.Decompress);
+            MemoryStream unzippedStream = new MemoryStream();
+            decompressor.CopyTo(unzippedStream);
+            unzippedStream.Position = 0;
+            return unzippedStream;
         }
 
         public static bool IsGZipped(string filePath)
@@ -87,6 +106,7 @@ namespace MCReader
             sb.Append("]");
             return sb.ToString();
         }
+
 
         public static string ToTree(this string s)
         {

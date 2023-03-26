@@ -10,6 +10,7 @@ namespace MCReader.NBT.Tags
         public int PayloadSize() => 0;
         private object _data = "NONE";
         private string _name = "END";
+        public int TagID() => (int)TagType.TAG_End;
 
         public object Data()
         {
