@@ -47,8 +47,20 @@ namespace MCReaderForm
 
             tree.EndUpdate();
 
-            tree.Nodes[0].Expand();
-            File.WriteAllText(@".\output.txt", TreeToString(tree.Nodes[0]));
+            if (cbExpandNBTTree.Checked)
+            {
+                tree.ExpandAll();
+            }
+            else
+            {
+                tree.Nodes[0].Expand();
+                foreach (TreeNode rootNode in tree.Nodes[0].Nodes)
+                {
+                    rootNode.Expand();
+                }
+            }
+            
+            //File.WriteAllText(@".\output.txt", TreeToString(tree.Nodes[0]));
         }
 
 
@@ -222,6 +234,7 @@ namespace MCReaderForm
             if (listViewChunks.SelectedItems.Count != 0)
             {
                 Chunk sel = (Chunk) listViewChunks.SelectedItems[0].Tag;
+                Log("Selected " + listViewChunks.SelectedIndices[0]);
                 DrawTree(sel.NBT);
             }
         }
@@ -324,11 +337,6 @@ namespace MCReaderForm
                 foreach (var file in files)
                 {
                     Log("Looking in " + file.Substring(folderBrowserSearch.SelectedPath.Length + 1));
-                    if (new FileInfo(file).Length == 0)
-                    {
-                        Log("Skipping " + file.Substring(folderBrowserSearch.SelectedPath.Length + 1) + " because it's size is 0");
-                        continue;
-                    }
                     input = OpenFile(file);
                     loadedRegion = new RegionFile(input);
                     _chunks = loadedRegion.ReadChunks();
@@ -345,6 +353,81 @@ namespace MCReaderForm
             {
                 Stream input = OpenFile(openFileDialogRegion.FileName);
                 LoadAndShowRegion(input);
+            }
+        }
+
+        private void buttonVillagerTradesSearchFolder_Click(object sender, EventArgs e)
+        {
+            Stream input;
+            if (folderBrowserSearch.ShowDialog() == DialogResult.OK)
+            {
+                var files = Directory.GetFiles(folderBrowserSearch.SelectedPath);
+
+                List<string> nonzero = new List<string>();
+                foreach (var file in files)
+                {
+                    if (new FileInfo(file).Length == 0)
+                    {
+                        //Log("Skipping " + file.Substring(folderBrowserSearch.SelectedPath.Length) + " because it's size is 0");
+                        continue;
+                    }
+                    nonzero.Add(file);
+                }
+
+                files = nonzero.ToArray();
+                tbVillagerTradesResults.AppendText("Starting folder search with " + nonzero.Count + " regions." + Environment.NewLine);
+
+                foreach (var file in files)
+                {
+                    Log("Looking in " + file.Substring(folderBrowserSearch.SelectedPath.Length + 1));
+                    input = OpenFile(file);
+                    loadedEntityRegion = new EntityFile(input);
+                    _chunks = loadedEntityRegion.ReadChunks();
+                    DoVillagerSearch(_chunks);
+                }
+            }
+
+            tbVillagerTradesResults.AppendText("Folder search finished." + Environment.NewLine);
+        }
+
+        private void buttonVillagerTradesSearchRegion_Click(object sender, EventArgs e)
+        {
+            List<Chunk> toSearch = new List<Chunk>();
+            for (int i = 0; i < listViewChunks.SelectedItems.Count; i++)
+            {
+                toSearch.Add((Chunk)listViewChunks.SelectedItems[i].Tag);
+            }
+            DoVillagerSearch(toSearch);
+        }
+
+        private void DoVillagerSearch(List<Chunk> toSearch)
+        {
+            List<Villager> villagers = EntityFile.GetVillagers(toSearch);
+            foreach (Villager v in villagers)
+            {
+                Log(v.ToString());
+                tbVillagerTradesResults.AppendText(v.ToString() + Environment.NewLine);
+                if (v.hasTrades)
+                {
+                    List<string> trades = v.GetTrades();
+                    foreach (string trade in trades)
+                    {
+                        tbVillagerTradesResults.AppendText("\t" + trade + Environment.NewLine);
+                    }
+                }
+            }
+        }
+
+        private void cbExpandNBTTree_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbExpandNBTTree.Checked)
+            {
+                tree.ExpandAll();
+            }
+            else
+            {
+                tree.CollapseAll();
+                tree.Nodes[0].Expand();
             }
         }
     }

@@ -56,12 +56,18 @@
             this.tbFinderID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChestFinderSearchSelected = new System.Windows.Forms.Button();
+            this.tabPageVillagerTrades = new System.Windows.Forms.TabPage();
+            this.buttonVillagerTradesSearchRegion = new System.Windows.Forms.Button();
+            this.buttonVillagerTradesSearchFolder = new System.Windows.Forms.Button();
+            this.tbVillagerTradesResults = new System.Windows.Forms.TextBox();
             this.folderBrowserSearch = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonOpenEntityRegionFile = new System.Windows.Forms.Button();
+            this.cbExpandNBTTree = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNBT.SuspendLayout();
             this.tabPageItemFinder.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPageVillagerTrades.SuspendLayout();
             this.SuspendLayout();
             // 
             // tree
@@ -98,7 +104,7 @@
             // 
             // buttonOpenLevelDat
             // 
-            this.buttonOpenLevelDat.Location = new System.Drawing.Point(493, 12);
+            this.buttonOpenLevelDat.Location = new System.Drawing.Point(274, 10);
             this.buttonOpenLevelDat.Name = "buttonOpenLevelDat";
             this.buttonOpenLevelDat.Size = new System.Drawing.Size(111, 30);
             this.buttonOpenLevelDat.TabIndex = 1;
@@ -169,6 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPageNBT);
             this.tabControl1.Controls.Add(this.tabPageItemFinder);
+            this.tabControl1.Controls.Add(this.tabPageVillagerTrades);
             this.tabControl1.Location = new System.Drawing.Point(143, 46);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -337,6 +344,52 @@
             this.buttonChestFinderSearchSelected.UseVisualStyleBackColor = true;
             this.buttonChestFinderSearchSelected.Click += new System.EventHandler(this.buttonChestFinderSearchSelected_Click);
             // 
+            // tabPageVillagerTrades
+            // 
+            this.tabPageVillagerTrades.Controls.Add(this.buttonVillagerTradesSearchRegion);
+            this.tabPageVillagerTrades.Controls.Add(this.buttonVillagerTradesSearchFolder);
+            this.tabPageVillagerTrades.Controls.Add(this.tbVillagerTradesResults);
+            this.tabPageVillagerTrades.Location = new System.Drawing.Point(4, 24);
+            this.tabPageVillagerTrades.Name = "tabPageVillagerTrades";
+            this.tabPageVillagerTrades.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageVillagerTrades.Size = new System.Drawing.Size(601, 411);
+            this.tabPageVillagerTrades.TabIndex = 2;
+            this.tabPageVillagerTrades.Text = "Villager Trades";
+            this.tabPageVillagerTrades.UseVisualStyleBackColor = true;
+            // 
+            // buttonVillagerTradesSearchRegion
+            // 
+            this.buttonVillagerTradesSearchRegion.Location = new System.Drawing.Point(466, 6);
+            this.buttonVillagerTradesSearchRegion.Name = "buttonVillagerTradesSearchRegion";
+            this.buttonVillagerTradesSearchRegion.Size = new System.Drawing.Size(129, 23);
+            this.buttonVillagerTradesSearchRegion.TabIndex = 17;
+            this.buttonVillagerTradesSearchRegion.Text = "Search region";
+            this.buttonVillagerTradesSearchRegion.UseVisualStyleBackColor = true;
+            this.buttonVillagerTradesSearchRegion.Click += new System.EventHandler(this.buttonVillagerTradesSearchRegion_Click);
+            // 
+            // buttonVillagerTradesSearchFolder
+            // 
+            this.buttonVillagerTradesSearchFolder.Location = new System.Drawing.Point(6, 6);
+            this.buttonVillagerTradesSearchFolder.Name = "buttonVillagerTradesSearchFolder";
+            this.buttonVillagerTradesSearchFolder.Size = new System.Drawing.Size(129, 23);
+            this.buttonVillagerTradesSearchFolder.TabIndex = 16;
+            this.buttonVillagerTradesSearchFolder.Text = "Search folder";
+            this.buttonVillagerTradesSearchFolder.UseVisualStyleBackColor = true;
+            this.buttonVillagerTradesSearchFolder.Click += new System.EventHandler(this.buttonVillagerTradesSearchFolder_Click);
+            // 
+            // tbVillagerTradesResults
+            // 
+            this.tbVillagerTradesResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbVillagerTradesResults.Location = new System.Drawing.Point(2, 35);
+            this.tbVillagerTradesResults.Multiline = true;
+            this.tbVillagerTradesResults.Name = "tbVillagerTradesResults";
+            this.tbVillagerTradesResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbVillagerTradesResults.Size = new System.Drawing.Size(596, 374);
+            this.tbVillagerTradesResults.TabIndex = 15;
+            this.tbVillagerTradesResults.WordWrap = false;
+            // 
             // buttonOpenEntityRegionFile
             // 
             this.buttonOpenEntityRegionFile.Location = new System.Drawing.Point(143, 10);
@@ -347,12 +400,26 @@
             this.buttonOpenEntityRegionFile.UseVisualStyleBackColor = true;
             this.buttonOpenEntityRegionFile.Click += new System.EventHandler(this.buttonOpenEntityRegionFile_Click);
             // 
+            // cbExpandNBTTree
+            // 
+            this.cbExpandNBTTree.AutoSize = true;
+            this.cbExpandNBTTree.Checked = true;
+            this.cbExpandNBTTree.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbExpandNBTTree.Location = new System.Drawing.Point(493, 19);
+            this.cbExpandNBTTree.Name = "cbExpandNBTTree";
+            this.cbExpandNBTTree.Size = new System.Drawing.Size(120, 19);
+            this.cbExpandNBTTree.TabIndex = 8;
+            this.cbExpandNBTTree.Text = "Auto-expand NBT";
+            this.cbExpandNBTTree.UseVisualStyleBackColor = true;
+            this.cbExpandNBTTree.CheckedChanged += new System.EventHandler(this.cbExpandNBTTree_CheckedChanged);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 494);
+            this.Controls.Add(this.cbExpandNBTTree);
             this.Controls.Add(this.buttonOpenEntityRegionFile);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.listViewChunks);
@@ -371,7 +438,10 @@
             this.tabPageItemFinder.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPageVillagerTrades.ResumeLayout(false);
+            this.tabPageVillagerTrades.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -405,5 +475,10 @@
         private Button buttonChestFinderSearchFolder;
         private FolderBrowserDialog folderBrowserSearch;
         private Button buttonOpenEntityRegionFile;
+        private TabPage tabPageVillagerTrades;
+        private Button buttonVillagerTradesSearchFolder;
+        private TextBox tbVillagerTradesResults;
+        private Button buttonVillagerTradesSearchRegion;
+        private CheckBox cbExpandNBTTree;
     }
 }

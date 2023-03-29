@@ -112,20 +112,39 @@ namespace MCReader
 
             try
             {
+                bool hasCoordinateTags = false;
                 List<INBTTag> data = (List<INBTTag>)NBT[0].Data();
                 foreach (INBTTag tag in data)
                 {
                     if (tag.Name() == "xPos")
                     {
                         coordX = (int)tag.Data();
+                        hasCoordinateTags = true;
                     }
                     else if (tag.Name() == "zPos")
                     {
                         coordZ = (int) tag.Data();
+                        hasCoordinateTags = true;
                     }
                     else if (tag.Name() == "block_entities")
                     {
                         numBlockEntities = ((TAG_List)tag).PayloadSize();
+                    }
+                }
+
+                if (coordX == 0 && coordZ == 0 && !hasCoordinateTags)
+                {
+                    object posTag = ((TAG_Compound)NBT[0]).GetChildData("Position");
+                    if (posTag != null)
+                    {
+                        TAG_Int[] intArr = ((TAG_Int[])posTag);
+
+                        coordX = (int) (intArr[0].Data());
+                        coordZ = (int) (intArr[1].Data());
+                    }
+                    else
+                    {
+                        Log("Couldn't fix coords for chunk " + this.ToString());
                     }
                 }
 

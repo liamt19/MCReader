@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO.Compression;
 using MCReader.NBT.Tags;
+using MCReader.Data;
 
 namespace MCReader
 {
@@ -22,6 +23,30 @@ namespace MCReader
         {
             Console.WriteLine(s.ToString());
             Debug.WriteLine(s.ToString());
+        }
+
+        public static string RemoveNamespace(string s)
+        {
+            if (s.Contains(':'))
+            {
+                return s.Substring(s.IndexOf(':') + 1);
+            }
+
+            return s;
+        }
+
+
+        /// <summary>
+        /// Returns true if a == b, or if a and b should be equal in the case of "apple" and "minecraft:apple".
+        /// </summary>
+        public static bool StringsEqual(string a, string b)
+        {
+            if (a == b)
+            {
+                return true;
+            }
+
+            return (a.EndsWith(":" + b) || b.EndsWith(":" + a));
         }
 
 

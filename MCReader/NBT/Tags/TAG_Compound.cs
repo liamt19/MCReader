@@ -22,19 +22,40 @@ namespace MCReader.NBT.Tags
             }
         }
 
-        public object GetChildData(string tagName)
+        /// <summary>
+        /// Returns the INBTTag.Data() of the tag with the name <param name="tagName">, or null if there isn't one.
+        /// </summary>
+        public object GetChildData(string tagName, bool ignoreCase = true)
         {
             if (_data != null)
             {
                 foreach (INBTTag tag in (List<INBTTag>)_data)
                 {
-                    if (tag.Name() == tagName)
+                    if (string.Equals(tag.Name(), tagName, (ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal)))
                     {
                         return tag.Data();
                     }
                 }
             }
-            return "(failed!)";
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the INBTTag with the name <param name="tagName">, or null if there isn't one.
+        /// </summary>
+        public INBTTag GetChildTag(string tagName, bool ignoreCase = true)
+        {
+            if (_data != null)
+            {
+                foreach (INBTTag tag in (List<INBTTag>)_data)
+                {
+                    if (string.Equals(tag.Name(), tagName, (ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal)))
+                    {
+                        return tag;
+                    }
+                }
+            }
+            return null;
         }
 
         public object Data()

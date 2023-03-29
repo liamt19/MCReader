@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MCReader.Data;
+
 namespace MCReader
 {
     public class EntityFile
@@ -81,5 +83,31 @@ namespace MCReader
         }
 
 
+        public static List<Villager> GetVillagers(List<Chunk> list)
+        {
+            List<Villager> villagers = new List<Villager>();
+
+            foreach (Chunk c in list)
+            {
+                TAG_Compound root = (TAG_Compound)(c.NBT[0]);
+                object entityTag = root.GetChildData("Entities");
+                if (entityTag != null)
+                {
+                    var entityList = ((List<INBTTag>)entityTag).Cast<TAG_Compound>();
+                    foreach (TAG_Compound entity in entityList)
+                    {
+                        string entityId = (string) entity.GetChildData("id");
+                        
+                        if (StringsEqual(entityId, "minecraft:villager"))
+                        {
+                            Villager v = new Villager(entity);
+                            villagers.Add(v);
+                        }
+                    }
+                }
+            }
+
+            return villagers;
+        }
     }
 }
