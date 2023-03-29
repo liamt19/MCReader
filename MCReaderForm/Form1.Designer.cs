@@ -66,12 +66,15 @@
             // 
             // tree
             // 
+            this.tree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tree.ImageIndex = 0;
             this.tree.ImageList = this.imageList1;
             this.tree.Location = new System.Drawing.Point(0, 0);
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size(609, 412);
+            this.tree.Size = new System.Drawing.Size(601, 411);
             this.tree.TabIndex = 0;
             // 
             // imageList1
@@ -111,7 +114,7 @@
             // 
             // buttonCopyMCPath
             // 
-            this.buttonCopyMCPath.Location = new System.Drawing.Point(614, 10);
+            this.buttonCopyMCPath.Location = new System.Drawing.Point(619, 12);
             this.buttonCopyMCPath.Name = "buttonCopyMCPath";
             this.buttonCopyMCPath.Size = new System.Drawing.Size(129, 30);
             this.buttonCopyMCPath.TabIndex = 2;
@@ -137,13 +140,15 @@
             // 
             // listViewChunks
             // 
+            this.listViewChunks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listViewChunks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
             this.listViewChunks.FullRowSelect = true;
             this.listViewChunks.Location = new System.Drawing.Point(12, 46);
             this.listViewChunks.Name = "listViewChunks";
-            this.listViewChunks.Size = new System.Drawing.Size(125, 440);
+            this.listViewChunks.Size = new System.Drawing.Size(125, 436);
             this.listViewChunks.TabIndex = 5;
             this.listViewChunks.UseCompatibleStateImageBehavior = false;
             this.listViewChunks.View = System.Windows.Forms.View.Details;
@@ -159,12 +164,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPageNBT);
             this.tabControl1.Controls.Add(this.tabPageItemFinder);
             this.tabControl1.Location = new System.Drawing.Point(143, 46);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(617, 440);
+            this.tabControl1.Size = new System.Drawing.Size(609, 439);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPageNBT
@@ -173,7 +181,7 @@
             this.tabPageNBT.Location = new System.Drawing.Point(4, 24);
             this.tabPageNBT.Name = "tabPageNBT";
             this.tabPageNBT.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNBT.Size = new System.Drawing.Size(609, 412);
+            this.tabPageNBT.Size = new System.Drawing.Size(601, 411);
             this.tabPageNBT.TabIndex = 0;
             this.tabPageNBT.Text = "NBT Viewer";
             this.tabPageNBT.UseVisualStyleBackColor = true;
@@ -194,7 +202,7 @@
             this.tabPageItemFinder.Location = new System.Drawing.Point(4, 24);
             this.tabPageItemFinder.Name = "tabPageItemFinder";
             this.tabPageItemFinder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageItemFinder.Size = new System.Drawing.Size(609, 412);
+            this.tabPageItemFinder.Size = new System.Drawing.Size(601, 411);
             this.tabPageItemFinder.TabIndex = 1;
             this.tabPageItemFinder.Text = "Item Finder";
             this.tabPageItemFinder.UseVisualStyleBackColor = true;
@@ -275,11 +283,14 @@
             // 
             // tbSearchResults
             // 
-            this.tbSearchResults.Location = new System.Drawing.Point(7, 138);
+            this.tbSearchResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearchResults.Location = new System.Drawing.Point(2, 138);
             this.tbSearchResults.Multiline = true;
             this.tbSearchResults.Name = "tbSearchResults";
             this.tbSearchResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbSearchResults.Size = new System.Drawing.Size(599, 271);
+            this.tbSearchResults.Size = new System.Drawing.Size(596, 271);
             this.tbSearchResults.TabIndex = 9;
             // 
             // label3
@@ -341,7 +352,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 495);
+            this.ClientSize = new System.Drawing.Size(768, 494);
             this.Controls.Add(this.buttonOpenEntityRegionFile);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.listViewChunks);

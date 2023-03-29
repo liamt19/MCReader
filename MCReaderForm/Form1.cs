@@ -162,7 +162,7 @@ namespace MCReaderForm
             }
 
             Log("Search finished, checked " + Chunk.chestsSearched + " block entities");
-            tbSearchResults.AppendText("Search finished, checked " + Chunk.chestsSearched + " block entities" + Environment.NewLine);
+            //tbSearchResults.AppendText("Search finished, checked " + Chunk.chestsSearched + " block entities" + Environment.NewLine);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -319,6 +319,7 @@ namespace MCReaderForm
                 }
 
                 files = nonzero.ToArray();
+                tbSearchResults.AppendText("Starting folder search with " + nonzero.Count + " regions." + Environment.NewLine);
 
                 foreach (var file in files)
                 {
@@ -335,7 +336,7 @@ namespace MCReaderForm
                 }
             }
 
-            tbSearchResults.AppendText("Folder search finished.\n");
+            tbSearchResults.AppendText("Folder search finished." + Environment.NewLine);
         }
 
         private void buttonOpenEntityRegionFile_Click(object sender, EventArgs e)
