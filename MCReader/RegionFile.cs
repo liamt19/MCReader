@@ -23,6 +23,12 @@ namespace MCReader
                 allChunks.Add(new Chunk());
             }
 
+            if (br.BaseStream.Length == 0)
+            {
+                Log("BinaryReader's base stream had a length of 0! Is file size 0?");
+                return allChunks;
+            }
+
             int generatedCount = 0;
             for (int i = 0; i < 1024; i++)
             {
@@ -67,13 +73,11 @@ namespace MCReader
 
                 byte[] buff = new byte[size];
                 br.Read(buff, 0, size);
-                c.data.AddRange(buff);
-                c.Uncompress();
+                c.Uncompress(buff);
 
                 //Log("Read chunk " + i);
             }
 
-            Log("done");
             return generated;
         }
 

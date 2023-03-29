@@ -5,7 +5,8 @@ namespace MCReader.NBT.Tags
 {
     public class TAG_List : INBTTag
     {
-        public int PayloadSize() => 0;
+        public int PayloadSize() => list_size;
+        private int list_size = 0;
         private object _data;
         private string _name;
         public int TagID() => (int)TagType.TAG_List;
@@ -25,11 +26,19 @@ namespace MCReader.NBT.Tags
             if (!noName)
                 _name = r.ReadString();
             _data = r.ReadList();
+            if (_data != null)
+            {
+                list_size = ((List<INBTTag>)_data).Count;
+            }
         }
 
         public TAG_List(object data = null)
         {
             this._data = data;
+            if (_data != null)
+            {
+                list_size = ((List<INBTTag>)_data).Count;
+            }
         }
 
         public string ToStringLevel(int level)

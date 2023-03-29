@@ -1,0 +1,133 @@
+Allay	0	allay
+Area Effect Cloud	1	area_effect_cloud
+Armor Stand	2	armor_stand
+Arrow	3	arrow
+Axolotl	4	axolotl
+Bat	5	bat
+Bee	6	bee
+Blaze	7	blaze
+Block Display	8	block_display
+Boat	9	boat
+Camel	10	camel
+Cat	11	cat
+Cave Spider	12	cave_spider
+Boat with Chest	13	chest_boat
+Minecart with Chest	14	chest_minecart
+Chicken	15	chicken
+Cod	16	cod
+Minecart with Command Block	17	command_block_minecart
+Cow	18	cow
+Creeper	19	creeper
+Dolphin	20	dolphin
+Donkey	21	donkey
+Dragon Fireball	22	dragon_fireball
+Drowned	23	drowned
+Thrown Egg	24	egg
+Elder Guardian	25	elder_guardian
+End Crystal	26	end_crystal
+Ender Dragon	27	ender_dragon
+Thrown Ender Pearl	28	ender_pearl
+Enderman	29	enderman
+Endermite	30	endermite
+Evoker	31	evoker
+Evoker Fangs	32	evoker_fangs
+Thrown Bottle o' Enchanting	33	experience_bottle
+Experience Orb	34	experience_orb
+Eye of Ender	35	eye_of_ender
+Falling Block	36	falling_block
+Fireball	57	fireball
+Firework Rocket	37	firework_rocket
+Fishing Bobber	123	fishing_bobber
+Fox	38	fox
+Frog	39	frog
+Minecart with Furnace	40	furnace_minecart
+Ghast	41	ghast
+Giant	42	giant
+Glow Item Frame	43	glow_item_frame
+Glow Squid	44	glow_squid
+Goat	45	goat
+Guardian	46	guardian
+Hoglin	47	hoglin
+Minecart with Hopper	48	hopper_minecart
+Horse	49	horse
+Husk	50	husk
+Illusioner	51	illusioner
+Interaction	52	interaction
+Iron Golem	53	iron_golem
+Item	54	item
+Item Display	55	item_display
+Item Frame	56	item_frame
+Leash Knot	58	leash_knot
+Lightning Bolt	59	lightning_bolt
+Llama	60	llama
+Llama Spit	61	llama_spit
+Magma Cube	62	magma_cube
+Marker	63	marker
+Minecart	64	minecart
+Mooshroom	65	mooshroom
+Mule	66	mule
+Ocelot	67	ocelot
+Painting	68	painting
+Panda	69	panda
+Parrot	70	parrot
+Phantom	71	phantom
+Pig	72	pig
+Piglin	73	piglin
+Piglin Brute	74	piglin_brute
+Pillager	75	pillager
+Player	122	player
+Polar Bear	76	polar_bear
+Potion	77	potion
+Pufferfish	78	pufferfish
+Rabbit	79	rabbit
+Ravager	80	ravager
+Salmon	81	salmon
+Sheep	82	sheep
+Shulker	83	shulker
+Shulker Bullet	84	shulker_bullet
+Silverfish	85	silverfish
+Skeleton	86	skeleton
+Skeleton Horse	87	skeleton_horse
+Slime	88	slime
+Small Fireball	89	small_fireball
+Sniffer	90	sniffer
+Snow Golem	91	snow_golem
+Snowball	92	snowball
+Minecart with Monster Spawner	93	spawner_minecart
+Spectral Arrow	94	spectral_arrow
+Spider	95	spider
+Squid	96	squid
+Stray	97	stray
+Strider	98	strider
+Tadpole	99	tadpole
+Text Display	100	text_display
+Primed TNT	101	tnt
+Minecart with TNT	102	tnt_minecart
+Trader Llama	103	trader_llama
+Trident	104	trident
+Tropical Fish	105	tropical_fish
+Turtle	106	turtle
+Vex	107	vex
+Villager	108	villager
+Vindicator	109	vindicator
+Wandering Trader	110	wandering_trader
+Warden	111	warden
+Witch	112	witch
+Wither	113	wither
+Wither Skeleton	114	wither_skeleton
+Wither Skull	115	wither_skull
+Wolf	116	wolf
+Zoglin	117	zoglin
+Zombie	118	zombie
+Zombie Horse	119	zombie_horse
+Zombie Villager	120	zombie_villager
+Zombified Piglin	121	zombified_piglin
+(unnamed)	-1	~abstract_ageable
+(unnamed)	-1	~abstract_animal
+(unnamed)	-1	~abstract_creature
+(unnamed)	-1	~abstract_entity
+(unnamed)	-1	~abstract_insentient
+(unnamed)	-1	~abstract_living
+(unnamed)	-1	~abstract_minecart
+(unnamed)	-1	~abstract_monster
+(unnamed)	-1	~abstract_tameable

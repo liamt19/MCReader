@@ -1,10 +1,13 @@
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using MCReader;
+using MCReader.Data;
 
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static MCReaderForm.FancyTreeView;
 using static MCReaderForm.FormUtilities;
 
@@ -14,15 +17,24 @@ namespace MCReaderForm
     public partial class Form1 : Form
     {
         private List<Chunk> _chunks = new List<Chunk>();
+        private NBTReader reader;
+        private RegionFile loadedRegion;
+        private EntityFile loadedEntityRegion;
 
         public Form1()
         {
             InitializeComponent();
+
+            cbFinderName.DataSource = DataLists.Items;
+            cbFinderName.DisplayMember = "display_name";
+
+            cbFinderInternalName.DataSource = DataLists.Items;
+            cbFinderInternalName.DisplayMember = "identifier";
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-
+            
         }
 
         public void DrawTree(List<INBTTag> list)
@@ -36,15 +48,16 @@ namespace MCReaderForm
             tree.EndUpdate();
 
             tree.Nodes[0].Expand();
+            File.WriteAllText(@".\output.txt", TreeToString(tree.Nodes[0]));
         }
 
 
 
         private void LoadAndShowLevelDat(Stream input)
         {
-            NBTReader r = new NBTReader(input);
-            List<INBTTag> list = r.ReadAll();
-
+            reader = new NBTReader(input);
+            List<INBTTag> list = reader.ReadAll();
+            list.PrintStats();
             DrawTree(list);
         }
 
@@ -52,9 +65,13 @@ namespace MCReaderForm
         {
             try
             {
-                RegionFile rf = new RegionFile(input);
-                _chunks = rf.ReadChunks();
+                loadedRegion = new RegionFile(input);
+
+                _chunks.Clear();
+                _chunks = loadedRegion.ReadChunks();
                 listViewChunks.Items.Clear();
+
+                _chunks = _chunks.OrderBy(a => a.coordX).ThenBy(a => a.coordZ).ToList();
 
                 foreach (Chunk c in _chunks)
                 {
@@ -63,6 +80,9 @@ namespace MCReaderForm
                     item.Tag = c;
                     listViewChunks.Items.Add(item);
                 }
+
+
+                listViewChunks.Sort();
 
                 listViewChunks.Items[0].Selected = true;
 
@@ -77,6 +97,73 @@ namespace MCReaderForm
             }
         }
 
+        private void LoadAndShowEntityRegion(Stream input)
+        {
+            try
+            {
+                loadedEntityRegion = new EntityFile(input);
+
+                _chunks.Clear();
+                _chunks = loadedEntityRegion.ReadChunks();
+                listViewChunks.Items.Clear();
+
+                _chunks = _chunks.OrderBy(a => a.coordX).ThenBy(a => a.coordZ).ToList();
+
+                foreach (Chunk c in _chunks)
+                {
+                    string[] row = { c.coordX.ToString(), c.coordZ.ToString() };
+                    ListViewItem item = new ListViewItem(row);
+                    item.Tag = c;
+                    listViewChunks.Items.Add(item);
+                }
+
+
+                listViewChunks.Sort();
+
+                listViewChunks.Items[0].Selected = true;
+
+                Chunk sel = ((Chunk)listViewChunks.SelectedItems[0].Tag);
+                DrawTree(sel.NBT);
+
+            }
+            catch (Exception ex)
+            {
+                Log("LoadAndShowEntityRegion failed!");
+                Log(ex);
+            }
+        }
+
+
+        private async void SearchForItemAsync(Item item, List<Chunk> toSearch, bool checkBlockEntities, bool checkEntities)
+        {
+            Chunk.chestsSearched = 0;
+            Chunk.blockEntitiesNoItemTag = 0;
+
+            foreach (Chunk c in toSearch)
+            {
+                if (c.FindInChests(item, out var results))
+                {
+                    Log("Found '" + item.display_name + "' in " + c.ToString());
+                    foreach (var (chestNBT, numInChest) in results)
+                    {
+                        //Log(numInChest + " in " + chestNBT.ToString());
+                        int xCoord = (int)chestNBT.GetChildData("x");
+                        int yCoord = (int)chestNBT.GetChildData("y");
+                        int zCoord = (int)chestNBT.GetChildData("z");
+
+                        Log(numInChest + " in chest at [" + xCoord + ", " + yCoord + ", " + zCoord + "]");
+                        tbSearchResults.AppendText(numInChest + " in chest at [" + xCoord + ", " + yCoord + ", " + zCoord + "]" + Environment.NewLine);
+                    }
+                }
+                else
+                {
+                    //Log("No '" + item.display_name + "' in " + c.ToString());
+                }
+            }
+
+            Log("Search finished, checked " + Chunk.chestsSearched + " block entities");
+            tbSearchResults.AppendText("Search finished, checked " + Chunk.chestsSearched + " block entities" + Environment.NewLine);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -144,7 +231,6 @@ namespace MCReaderForm
             try
             {
                 string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
-                Log("Files: " + files.ToString());
                 string file = files[0];
                 if (file.EndsWith("dat"))
                 {
@@ -176,45 +262,89 @@ namespace MCReaderForm
             }
         }
 
-        public static TreeNode EnumerateList(List<INBTTag> list)
+
+        private void buttonChestFinderSearchSelected_Click(object sender, EventArgs e)
         {
-            TreeNode res = new TreeNode();
-            for (int i = 0; i < list.Count; i++)
+            List<Chunk> toSearch = new List<Chunk>();
+            if (listViewChunks.SelectedItems.Count == 1)
             {
-                INBTTag tag = list[i];
-                TreeNode temp;
-                if ((tag is TAG_Compound) || (tag is TAG_List))
+                toSearch.Add((Chunk)listViewChunks.SelectedItems[0].Tag);
+                tbSearchResults.AppendText("Searching for '" + cbFinderName.Text + "' in " + listViewChunks.SelectedItems.Count + " chunks" + Environment.NewLine);
+            }
+            else
+            {
+                for (int i = 0; i < listViewChunks.SelectedItems.Count; i++)
                 {
-                    List<INBTTag> tagList = ((List<INBTTag>)tag.Data());
-                    temp = EnumerateList(tagList);
-                    temp.Text = tag.Name();
+                    toSearch.Add((Chunk)listViewChunks.SelectedItems[i].Tag);
                 }
-                else if ((tag is TAG_Int_Array) || (tag is TAG_Long_Array))
+                tbSearchResults.AppendText("Searching for '" + cbFinderName.Text + "' in " + listViewChunks.SelectedItems.Count + " chunks" + Environment.NewLine);
+            }
+
+            Item item = (Item)cbFinderName.SelectedItem;
+            SearchForItemAsync(item, toSearch, checkBoxFinderBlockEntities.Checked, checkBoxFinderEntities.Checked);
+        }
+
+        private void buttonChestFinderSearchRegion_Click(object sender, EventArgs e)
+        {
+            tbSearchResults.AppendText("Searching for '" + cbFinderName.Text + "' in " + _chunks.Count + " chunks (entire region)" + Environment.NewLine);
+
+            Item item = (Item)cbFinderName.SelectedItem;
+            SearchForItemAsync(item, _chunks, checkBoxFinderBlockEntities.Checked, checkBoxFinderEntities.Checked);
+        }
+
+
+        private void cbFinderName_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Item it = (Item)cbFinderName.SelectedItem;
+            tbFinderID.Text = it.numeric_id.ToString();
+        }
+
+        private void buttonChestFinderSearchFolder_Click(object sender, EventArgs e)
+        {
+            Item item = (Item)cbFinderName.SelectedItem;
+            Stream input;
+            if (folderBrowserSearch.ShowDialog() == DialogResult.OK)
+            {
+                var files = Directory.GetFiles(folderBrowserSearch.SelectedPath);
+
+                List<string> nonzero = new List<string>();
+                foreach (var file in files)
                 {
-                    INBTTag[] tagArr = ((INBTTag[])tag.Data());
-                    temp = EnumerateList(tagArr.ToList());
-                    temp.Text = tag.Name();
-                }
-                else
-                {
-                    temp = new TreeNode(tag.ToString());
+                    if (new FileInfo(file).Length == 0)
+                    {
+                        //Log("Skipping " + file.Substring(folderBrowserSearch.SelectedPath.Length) + " because it's size is 0");
+                        continue;
+                    }
+                    nonzero.Add(file);
                 }
 
-                int imgIdx = (int)INBTTag.IDOf(tag);
-                temp.ImageIndex = imgIdx;
-                temp.SelectedImageIndex = imgIdx;
+                files = nonzero.ToArray();
 
-                if (i == 0 && tag is TAG_Compound && (tag as TAG_Compound).IsRoot)
+                foreach (var file in files)
                 {
-                    res = temp;
-                }
-                else
-                {
-                    res.Nodes.Add(temp);
+                    Log("Looking in " + file.Substring(folderBrowserSearch.SelectedPath.Length + 1));
+                    if (new FileInfo(file).Length == 0)
+                    {
+                        Log("Skipping " + file.Substring(folderBrowserSearch.SelectedPath.Length + 1) + " because it's size is 0");
+                        continue;
+                    }
+                    input = OpenFile(file);
+                    loadedRegion = new RegionFile(input);
+                    _chunks = loadedRegion.ReadChunks();
+                    SearchForItemAsync(item, _chunks, true, true);
                 }
             }
 
-            return res;
+            tbSearchResults.AppendText("Folder search finished.\n");
+        }
+
+        private void buttonOpenEntityRegionFile_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogRegion.ShowDialog() == DialogResult.OK)
+            {
+                Stream input = OpenFile(openFileDialogRegion.FileName);
+                LoadAndShowRegion(input);
+            }
         }
     }
 

@@ -1,0 +1,1 @@
+﻿The data file "Burgerdata.json" was generated using https://github.com/Pokechu22/Burger

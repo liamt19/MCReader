@@ -27,7 +27,6 @@ namespace MCReader.NBT
             {
                 INBTTag tag = ReadNext();
                 list.Add(tag);
-                //Log("Added tag " + tag.ToString());
             }
 
             return list;

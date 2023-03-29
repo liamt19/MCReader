@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO.Compression;
+using MCReader.NBT.Tags;
 
 namespace MCReader
 {
@@ -93,6 +94,87 @@ namespace MCReader
 
             return false;
         }
+
+        public static void PrintStats(this List<INBTTag> list)
+        {
+            NBTStats stats = new NBTStats();
+            PrintStats_rec(list, ref stats);
+            Log("Ends: " + stats.numEnds);
+            Log("Bytes: " + stats.numBytes);
+            Log("Shorts: " + stats.numShorts);
+            Log("Longs: " + stats.numLongs);
+            Log("Floats: " + stats.numFloats);
+            Log("Doubles: " + stats.numDoubles);
+            Log(stats.numByteArraysBytes + " bytes in " + stats.numByteArrays + " byte arrays");
+            Log(stats.numCharsInStrings + " characters in " + stats.numStrings + " strings");
+            Log("Lists: " + stats.numLists);
+            Log("Compounds: " + stats.numCompounds);
+            Log(stats.numIntArraysInts + " ints in " + stats.numIntArrays + " int arrays");
+            Log(stats.numLongArraysLongs + " longs in " + stats.numLongArrays + " long arrays");
+        }
+
+        private static void PrintStats_rec(List<INBTTag> list, ref NBTStats stats)
+        {
+            foreach (INBTTag tag in list)
+            {
+                if (tag.TagID() == (int)TagType.TAG_End)
+                {
+                    stats.numEnds++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Byte)
+                {
+                    stats.numBytes++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Short)
+                {
+                    stats.numShorts++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Int)
+                {
+                    stats.numInts++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Long)
+                {
+                    stats.numLongs++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Float)
+                {
+                    stats.numFloats++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Double)
+                {
+                    stats.numDoubles++;
+                }
+                if (tag.TagID() == (int)TagType.TAG_Byte_Array)
+                {
+                    stats.numByteArrays++;
+                    stats.numByteArraysBytes += ((TAG_Byte[])tag.Data()).Length;
+                }
+                if (tag.TagID() == (int)TagType.TAG_String)
+                {
+                    stats.numStrings++;
+                    stats.numCharsInStrings += ((string)tag.Data()).Length;
+                }
+                if (tag.TagID() == (int)TagType.TAG_List)
+                {
+                    stats.numLists++;
+                    var children = ((List<INBTTag>)tag.Data());
+                    PrintStats_rec(children, ref stats);
+                }
+                if (tag.TagID() == (int)TagType.TAG_Compound)
+                {
+                    stats.numCompounds++;
+                    var children = ((List<INBTTag>)tag.Data());
+                    PrintStats_rec(children, ref stats);
+                }
+                if (tag.TagID() == (int)TagType.TAG_Long_Array)
+                {
+                    stats.numLongArrays++;
+                    stats.numLongArraysLongs += ((TAG_Long[])tag.Data()).Length;
+                }
+            }
+        }
+
 
         public static string Stringify(this List<INBTTag> list)
         {

@@ -22,6 +22,21 @@ namespace MCReader.NBT.Tags
             }
         }
 
+        public object GetChildData(string tagName)
+        {
+            if (_data != null)
+            {
+                foreach (INBTTag tag in (List<INBTTag>)_data)
+                {
+                    if (tag.Name() == tagName)
+                    {
+                        return tag.Data();
+                    }
+                }
+            }
+            return "(failed!)";
+        }
+
         public object Data()
         {
             return _data;

@@ -1,0 +1,1003 @@
+Acacia Button	389	acacia_button
+Acacia Door	586	acacia_door
+Acacia Fence	578	acacia_fence
+Acacia Fence Gate	570	acacia_fence_gate
+Acacia Hanging Sign	211	acacia_hanging_sign
+Acacia Leaves	86	acacia_leaves
+Acacia Log	50	acacia_log
+Acacia Planks	17	acacia_planks
+Acacia Pressure Plate	237	acacia_pressure_plate
+Acacia Sapling	27	acacia_sapling
+Acacia Sign	189	acacia_sign
+Acacia Slab	543	acacia_slab
+Acacia Stairs	457	acacia_stairs
+Acacia Trapdoor	289	acacia_trapdoor
+Acacia Wall Hanging Sign	222	acacia_wall_hanging_sign
+Acacia Wall Sign	202	acacia_wall_sign
+Acacia Wood	70	acacia_wood
+Activator Rail	423	activator_rail
+Air	0	air
+Allium	151	allium
+Block of Amethyst	903	amethyst_block
+Amethyst Cluster	905	amethyst_cluster
+Ancient Debris	841	ancient_debris
+Andesite	6	andesite
+Andesite Slab	755	andesite_slab
+Andesite Stairs	742	andesite_stairs
+Andesite Wall	767	andesite_wall
+Anvil	408	anvil
+Attached Melon Stem	314	attached_melon_stem
+Attached Pumpkin Stem	313	attached_pumpkin_stem
+Azalea	959	azalea
+Azalea Leaves	90	azalea_leaves
+Azure Bluet	152	azure_bluet
+Bamboo	727	bamboo
+Block of Bamboo	56	bamboo_block
+Bamboo Button	393	bamboo_button
+Bamboo Door	590	bamboo_door
+Bamboo Fence	582	bamboo_fence
+Bamboo Fence Gate	574	bamboo_fence_gate
+Bamboo Hanging Sign	218	bamboo_hanging_sign
+Bamboo Mosaic	22	bamboo_mosaic
+Bamboo Mosaic Slab	548	bamboo_mosaic_slab
+Bamboo Mosaic Stairs	462	bamboo_mosaic_stairs
+Bamboo Planks	21	bamboo_planks
+Bamboo Pressure Plate	241	bamboo_pressure_plate
+Bamboo Shoot	726	bamboo_sapling
+Bamboo Sign	194	bamboo_sign
+Bamboo Slab	547	bamboo_slab
+Bamboo Stairs	461	bamboo_stairs
+Bamboo Trapdoor	293	bamboo_trapdoor
+Bamboo Wall Hanging Sign	229	bamboo_wall_hanging_sign
+Bamboo Wall Sign	207	bamboo_wall_sign
+Barrel	774	barrel
+Barrier	464	barrier
+Basalt	259	basalt
+Beacon	352	beacon
+Bedrock	31	bedrock
+Bee Nest	836	bee_nest
+Beehive	837	beehive
+Beetroots	601	beetroots
+Bell	783	bell
+Big Dripleaf	964	big_dripleaf
+Big Dripleaf Stem	965	big_dripleaf_stem
+Birch Button	387	birch_button
+Birch Door	584	birch_door
+Birch Fence	576	birch_fence
+Birch Fence Gate	568	birch_fence_gate
+Birch Hanging Sign	210	birch_hanging_sign
+Birch Leaves	84	birch_leaves
+Birch Log	48	birch_log
+Birch Planks	15	birch_planks
+Birch Pressure Plate	235	birch_pressure_plate
+Birch Sapling	25	birch_sapling
+Birch Sign	188	birch_sign
+Birch Slab	541	birch_slab
+Birch Stairs	349	birch_stairs
+Birch Trapdoor	287	birch_trapdoor
+Birch Wall Hanging Sign	221	birch_wall_hanging_sign
+Birch Wall Sign	201	birch_wall_sign
+Birch Wood	68	birch_wood
+Black Banner	518	black_banner
+Black Bed	118	black_bed
+Black Candle	885	black_candle
+Cake with Black Candle	902	black_candle_cake
+Black Carpet	493	black_carpet
+Black Concrete	661	black_concrete
+Black Concrete Powder	677	black_concrete_powder
+Black Glazed Terracotta	645	black_glazed_terracotta
+Black Shulker Box	629	black_shulker_box
+Black Stained Glass	284	black_stained_glass
+Black Stained Glass Pane	456	black_stained_glass_pane
+Black Terracotta	440	black_terracotta
+(unnamed)	534	black_wall_banner
+Black Wool	145	black_wool
+Blackstone	849	blackstone
+Blackstone Slab	852	blackstone_slab
+Blackstone Stairs	850	blackstone_stairs
+Blackstone Wall	851	blackstone_wall
+Blast Furnace	776	blast_furnace
+Blue Banner	514	blue_banner
+Blue Bed	114	blue_bed
+Blue Candle	881	blue_candle
+Cake with Blue Candle	898	blue_candle_cake
+Blue Carpet	489	blue_carpet
+Blue Concrete	657	blue_concrete
+Blue Concrete Powder	673	blue_concrete_powder
+Blue Glazed Terracotta	641	blue_glazed_terracotta
+Blue Ice	724	blue_ice
+Blue Orchid	150	blue_orchid
+Blue Shulker Box	625	blue_shulker_box
+Blue Stained Glass	280	blue_stained_glass
+Blue Stained Glass Pane	452	blue_stained_glass_pane
+Blue Terracotta	436	blue_terracotta
+(unnamed)	530	blue_wall_banner
+Blue Wool	141	blue_wool
+Bone Block	610	bone_block
+Bookshelf	167	bookshelf
+Brain Coral	699	brain_coral
+Brain Coral Block	689	brain_coral_block
+Brain Coral Fan	709	brain_coral_fan
+Brain Coral Wall Fan	719	brain_coral_wall_fan
+Brewing Stand	330	brewing_stand
+Brick Slab	555	brick_slab
+Brick Stairs	320	brick_stairs
+Brick Wall	759	brick_wall
+Bricks	165	bricks
+Brown Banner	515	brown_banner
+Brown Bed	115	brown_bed
+Brown Candle	882	brown_candle
+Cake with Brown Candle	899	brown_candle_cake
+Brown Carpet	490	brown_carpet
+Brown Concrete	658	brown_concrete
+Brown Concrete Powder	674	brown_concrete_powder
+Brown Glazed Terracotta	642	brown_glazed_terracotta
+Brown Mushroom	161	brown_mushroom
+Brown Mushroom Block	306	brown_mushroom_block
+Brown Shulker Box	626	brown_shulker_box
+Brown Stained Glass	281	brown_stained_glass
+Brown Stained Glass Pane	453	brown_stained_glass_pane
+Brown Terracotta	437	brown_terracotta
+(unnamed)	531	brown_wall_banner
+Brown Wool	142	brown_wool
+Bubble Column	731	bubble_column
+Bubble Coral	700	bubble_coral
+Bubble Coral Block	690	bubble_coral_block
+Bubble Coral Fan	710	bubble_coral_fan
+Bubble Coral Wall Fan	720	bubble_coral_wall_fan
+Budding Amethyst	904	budding_amethyst
+Cactus	250	cactus
+Cake	267	cake
+Calcite	910	calcite
+Calibrated Sculk Sensor	914	calibrated_sculk_sensor
+Campfire	786	campfire
+Candle	869	candle
+Cake with Candle	886	candle_cake
+Carrots	383	carrots
+Cartography Table	777	cartography_table
+Carved Pumpkin	265	carved_pumpkin
+Cauldron	331	cauldron
+Cave Air	730	cave_air
+Cave Vines	956	cave_vines
+Cave Vines Plant	957	cave_vines_plant
+Chain	310	chain
+Chain Command Block	605	chain_command_block
+Cherry Button	390	cherry_button
+Cherry Door	587	cherry_door
+Cherry Fence	579	cherry_fence
+Cherry Fence Gate	571	cherry_fence_gate
+Cherry Hanging Sign	212	cherry_hanging_sign
+Cherry Leaves	87	cherry_leaves
+Cherry Log	51	cherry_log
+Cherry Planks	18	cherry_planks
+Cherry Pressure Plate	238	cherry_pressure_plate
+Cherry Sapling	28	cherry_sapling
+Cherry Sign	190	cherry_sign
+Cherry Slab	544	cherry_slab
+Cherry Stairs	458	cherry_stairs
+Cherry Trapdoor	290	cherry_trapdoor
+Cherry Wall Hanging Sign	223	cherry_wall_hanging_sign
+Cherry Wall Sign	203	cherry_wall_sign
+Cherry Wood	71	cherry_wood
+Chest	177	chest
+Chipped Anvil	409	chipped_anvil
+Chiseled Bookshelf	168	chiseled_bookshelf
+Chiseled Deepslate	987	chiseled_deepslate
+Chiseled Nether Bricks	866	chiseled_nether_bricks
+Chiseled Polished Blackstone	856	chiseled_polished_blackstone
+Chiseled Quartz Block	420	chiseled_quartz_block
+Chiseled Red Sandstone	536	chiseled_red_sandstone
+Chiseled Sandstone	100	chiseled_sandstone
+Chiseled Stone Bricks	297	chiseled_stone_bricks
+Chorus Flower	593	chorus_flower
+Chorus Plant	592	chorus_plant
+Clay	251	clay
+Block of Coal	495	coal_block
+Coal Ore	43	coal_ore
+Coarse Dirt	10	coarse_dirt
+Cobbled Deepslate	971	cobbled_deepslate
+Cobbled Deepslate Slab	973	cobbled_deepslate_slab
+Cobbled Deepslate Stairs	972	cobbled_deepslate_stairs
+Cobbled Deepslate Wall	974	cobbled_deepslate_wall
+Cobblestone	12	cobblestone
+Cobblestone Slab	554	cobblestone_slab
+Cobblestone Stairs	198	cobblestone_stairs
+Cobblestone Wall	353	cobblestone_wall
+Cobweb	122	cobweb
+Cocoa	340	cocoa
+Command Block	351	command_block
+Redstone Comparator	414	comparator
+Composter	834	composter
+Conduit	725	conduit
+Block of Copper	922	copper_block
+Copper Ore	923	copper_ore
+Cornflower	158	cornflower
+Cracked Deepslate Bricks	988	cracked_deepslate_bricks
+Cracked Deepslate Tiles	989	cracked_deepslate_tiles
+Cracked Nether Bricks	867	cracked_nether_bricks
+Cracked Polished Blackstone Bricks	855	cracked_polished_blackstone_bricks
+Cracked Stone Bricks	296	cracked_stone_bricks
+Crafting Table	182	crafting_table
+Creeper Head	402	creeper_head
+Creeper Wall Head	403	creeper_wall_head
+Crimson Button	824	crimson_button
+Crimson Door	826	crimson_door
+Crimson Fence	816	crimson_fence
+Crimson Fence Gate	820	crimson_fence_gate
+Crimson Fungus	803	crimson_fungus
+Crimson Hanging Sign	215	crimson_hanging_sign
+Crimson Hyphae	800	crimson_hyphae
+Crimson Nylium	802	crimson_nylium
+Crimson Planks	810	crimson_planks
+Crimson Pressure Plate	814	crimson_pressure_plate
+Crimson Roots	809	crimson_roots
+Crimson Sign	828	crimson_sign
+Crimson Slab	812	crimson_slab
+Crimson Stairs	822	crimson_stairs
+Crimson Stem	798	crimson_stem
+Crimson Trapdoor	818	crimson_trapdoor
+Crimson Wall Hanging Sign	227	crimson_wall_hanging_sign
+Crimson Wall Sign	830	crimson_wall_sign
+Crying Obsidian	842	crying_obsidian
+Cut Copper	928	cut_copper
+Cut Copper Slab	936	cut_copper_slab
+Cut Copper Stairs	932	cut_copper_stairs
+Cut Red Sandstone	537	cut_red_sandstone
+Cut Red Sandstone Slab	561	cut_red_sandstone_slab
+Cut Sandstone	101	cut_sandstone
+Cut Sandstone Slab	552	cut_sandstone_slab
+Cyan Banner	512	cyan_banner
+Cyan Bed	112	cyan_bed
+Cyan Candle	879	cyan_candle
+Cake with Cyan Candle	896	cyan_candle_cake
+Cyan Carpet	487	cyan_carpet
+Cyan Concrete	655	cyan_concrete
+Cyan Concrete Powder	671	cyan_concrete_powder
+Cyan Glazed Terracotta	639	cyan_glazed_terracotta
+Cyan Shulker Box	623	cyan_shulker_box
+Cyan Stained Glass	278	cyan_stained_glass
+Cyan Stained Glass Pane	450	cyan_stained_glass_pane
+Cyan Terracotta	434	cyan_terracotta
+(unnamed)	528	cyan_wall_banner
+Cyan Wool	139	cyan_wool
+Damaged Anvil	410	damaged_anvil
+Dandelion	147	dandelion
+Dark Oak Button	391	dark_oak_button
+Dark Oak Door	588	dark_oak_door
+Dark Oak Fence	580	dark_oak_fence
+Dark Oak Fence Gate	572	dark_oak_fence_gate
+Dark Oak Hanging Sign	214	dark_oak_hanging_sign
+Dark Oak Leaves	88	dark_oak_leaves
+Dark Oak Log	52	dark_oak_log
+Dark Oak Planks	19	dark_oak_planks
+Dark Oak Pressure Plate	239	dark_oak_pressure_plate
+Dark Oak Sapling	29	dark_oak_sapling
+Dark Oak Sign	192	dark_oak_sign
+Dark Oak Slab	545	dark_oak_slab
+Dark Oak Stairs	459	dark_oak_stairs
+Dark Oak Trapdoor	291	dark_oak_trapdoor
+Dark Oak Wall Hanging Sign	225	dark_oak_wall_hanging_sign
+Dark Oak Wall Sign	205	dark_oak_wall_sign
+Dark Oak Wood	72	dark_oak_wood
+Dark Prismarine	469	dark_prismarine
+Dark Prismarine Slab	475	dark_prismarine_slab
+Dark Prismarine Stairs	472	dark_prismarine_stairs
+Daylight Detector	415	daylight_detector
+Dead Brain Coral	694	dead_brain_coral
+Dead Brain Coral Block	684	dead_brain_coral_block
+Dead Brain Coral Fan	704	dead_brain_coral_fan
+Dead Brain Coral Wall Fan	714	dead_brain_coral_wall_fan
+Dead Bubble Coral	695	dead_bubble_coral
+Dead Bubble Coral Block	685	dead_bubble_coral_block
+Dead Bubble Coral Fan	705	dead_bubble_coral_fan
+Dead Bubble Coral Wall Fan	715	dead_bubble_coral_wall_fan
+Dead Bush	125	dead_bush
+Dead Fire Coral	696	dead_fire_coral
+Dead Fire Coral Block	686	dead_fire_coral_block
+Dead Fire Coral Fan	706	dead_fire_coral_fan
+Dead Fire Coral Wall Fan	716	dead_fire_coral_wall_fan
+Dead Horn Coral	697	dead_horn_coral
+Dead Horn Coral Block	687	dead_horn_coral_block
+Dead Horn Coral Fan	707	dead_horn_coral_fan
+Dead Horn Coral Wall Fan	717	dead_horn_coral_wall_fan
+Dead Tube Coral	693	dead_tube_coral
+Dead Tube Coral Block	683	dead_tube_coral_block
+Dead Tube Coral Fan	703	dead_tube_coral_fan
+Dead Tube Coral Wall Fan	713	dead_tube_coral_wall_fan
+Decorated Pot	1002	decorated_pot
+Deepslate	970	deepslate
+Deepslate Brick Slab	985	deepslate_brick_slab
+Deepslate Brick Stairs	984	deepslate_brick_stairs
+Deepslate Brick Wall	986	deepslate_brick_wall
+Deepslate Bricks	983	deepslate_bricks
+Deepslate Coal Ore	44	deepslate_coal_ore
+Deepslate Copper Ore	924	deepslate_copper_ore
+Deepslate Diamond Ore	180	deepslate_diamond_ore
+Deepslate Emerald Ore	343	deepslate_emerald_ore
+Deepslate Gold Ore	40	deepslate_gold_ore
+Deepslate Iron Ore	42	deepslate_iron_ore
+Deepslate Lapis Lazuli Ore	96	deepslate_lapis_ore
+Deepslate Redstone Ore	243	deepslate_redstone_ore
+Deepslate Tile Slab	981	deepslate_tile_slab
+Deepslate Tile Stairs	980	deepslate_tile_stairs
+Deepslate Tile Wall	982	deepslate_tile_wall
+Deepslate Tiles	979	deepslate_tiles
+Detector Rail	120	detector_rail
+Block of Diamond	181	diamond_block
+Diamond Ore	179	diamond_ore
+Diorite	4	diorite
+Diorite Slab	758	diorite_slab
+Diorite Stairs	745	diorite_stairs
+Diorite Wall	771	diorite_wall
+Dirt	9	dirt
+Dirt Path	602	dirt_path
+Dispenser	98	dispenser
+Dragon Egg	338	dragon_egg
+Dragon Head	404	dragon_head
+Dragon Wall Head	405	dragon_wall_head
+Dried Kelp Block	680	dried_kelp_block
+Dripstone Block	955	dripstone_block
+Dropper	424	dropper
+Block of Emerald	347	emerald_block
+Emerald Ore	342	emerald_ore
+Enchanting Table	329	enchanting_table
+End Gateway	603	end_gateway
+End Portal	335	end_portal
+End Portal Frame	336	end_portal_frame
+End Rod	591	end_rod
+End Stone	337	end_stone
+End Stone Brick Slab	751	end_stone_brick_slab
+End Stone Brick Stairs	737	end_stone_brick_stairs
+End Stone Brick Wall	770	end_stone_brick_wall
+End Stone Bricks	597	end_stone_bricks
+Ender Chest	344	ender_chest
+Exposed Copper	921	exposed_copper
+Exposed Cut Copper	927	exposed_cut_copper
+Exposed Cut Copper Slab	935	exposed_cut_copper_slab
+Exposed Cut Copper Stairs	931	exposed_cut_copper_stairs
+Farmland	184	farmland
+Fern	124	fern
+Fire	173	fire
+Fire Coral	701	fire_coral
+Fire Coral Block	691	fire_coral_block
+Fire Coral Fan	711	fire_coral_fan
+Fire Coral Wall Fan	721	fire_coral_wall_fan
+Fletching Table	778	fletching_table
+Flower Pot	355	flower_pot
+Flowering Azalea	960	flowering_azalea
+Flowering Azalea Leaves	91	flowering_azalea_leaves
+Frogspawn	1000	frogspawn
+Frosted Ice	606	frosted_ice
+Furnace	185	furnace
+Gilded Blackstone	860	gilded_blackstone
+Glass	94	glass
+Glass Pane	311	glass_pane
+Glow Lichen	318	glow_lichen
+Glowstone	263	glowstone
+Block of Gold	163	gold_block
+Gold Ore	39	gold_ore
+Granite	2	granite
+Granite Slab	754	granite_slab
+Granite Stairs	741	granite_stairs
+Granite Wall	763	granite_wall
+Grass	123	grass
+Grass Block	8	grass_block
+Gravel	37	gravel
+Gray Banner	510	gray_banner
+Gray Bed	110	gray_bed
+Gray Candle	877	gray_candle
+Cake with Gray Candle	894	gray_candle_cake
+Gray Carpet	485	gray_carpet
+Gray Concrete	653	gray_concrete
+Gray Concrete Powder	669	gray_concrete_powder
+Gray Glazed Terracotta	637	gray_glazed_terracotta
+Gray Shulker Box	621	gray_shulker_box
+Gray Stained Glass	276	gray_stained_glass
+Gray Stained Glass Pane	448	gray_stained_glass_pane
+Gray Terracotta	432	gray_terracotta
+(unnamed)	526	gray_wall_banner
+Gray Wool	137	gray_wool
+Green Banner	516	green_banner
+Green Bed	116	green_bed
+Green Candle	883	green_candle
+Cake with Green Candle	900	green_candle_cake
+Green Carpet	491	green_carpet
+Green Concrete	659	green_concrete
+Green Concrete Powder	675	green_concrete_powder
+Green Glazed Terracotta	643	green_glazed_terracotta
+Green Shulker Box	627	green_shulker_box
+Green Stained Glass	282	green_stained_glass
+Green Stained Glass Pane	454	green_stained_glass_pane
+Green Terracotta	438	green_terracotta
+(unnamed)	532	green_wall_banner
+Green Wool	143	green_wool
+Grindstone	779	grindstone
+Hanging Roots	967	hanging_roots
+Hay Bale	477	hay_block
+Heavy Weighted Pressure Plate	413	heavy_weighted_pressure_plate
+Honey Block	838	honey_block
+Honeycomb Block	839	honeycomb_block
+Hopper	418	hopper
+Horn Coral	702	horn_coral
+Horn Coral Block	692	horn_coral_block
+Horn Coral Fan	712	horn_coral_fan
+Horn Coral Wall Fan	722	horn_coral_wall_fan
+Ice	248	ice
+Infested Chiseled Stone Bricks	305	infested_chiseled_stone_bricks
+Infested Cobblestone	301	infested_cobblestone
+Infested Cracked Stone Bricks	304	infested_cracked_stone_bricks
+Infested Deepslate	990	infested_deepslate
+Infested Mossy Stone Bricks	303	infested_mossy_stone_bricks
+Infested Stone	300	infested_stone
+Infested Stone Bricks	302	infested_stone_bricks
+Iron Bars	309	iron_bars
+Block of Iron	164	iron_block
+Iron Door	232	iron_door
+Iron Ore	41	iron_ore
+Iron Trapdoor	466	iron_trapdoor
+Jack o'Lantern	266	jack_o_lantern
+Jigsaw Block	833	jigsaw
+Jukebox	253	jukebox
+Jungle Button	388	jungle_button
+Jungle Door	585	jungle_door
+Jungle Fence	577	jungle_fence
+Jungle Fence Gate	569	jungle_fence_gate
+Jungle Hanging Sign	213	jungle_hanging_sign
+Jungle Leaves	85	jungle_leaves
+Jungle Log	49	jungle_log
+Jungle Planks	16	jungle_planks
+Jungle Pressure Plate	236	jungle_pressure_plate
+Jungle Sapling	26	jungle_sapling
+Jungle Sign	191	jungle_sign
+Jungle Slab	542	jungle_slab
+Jungle Stairs	350	jungle_stairs
+Jungle Trapdoor	288	jungle_trapdoor
+Jungle Wall Hanging Sign	224	jungle_wall_hanging_sign
+Jungle Wall Sign	204	jungle_wall_sign
+Jungle Wood	69	jungle_wood
+Kelp	678	kelp
+Kelp Plant	679	kelp_plant
+Ladder	196	ladder
+Lantern	784	lantern
+Block of Lapis Lazuli	97	lapis_block
+Lapis Lazuli Ore	95	lapis_ore
+Large Amethyst Bud	906	large_amethyst_bud
+Large Fern	502	large_fern
+Lava	33	lava
+Lava Cauldron	333	lava_cauldron
+Lectern	780	lectern
+Lever	230	lever
+Light	465	light
+Light Blue Banner	506	light_blue_banner
+Light Blue Bed	106	light_blue_bed
+Light Blue Candle	873	light_blue_candle
+Cake with Light Blue Candle	890	light_blue_candle_cake
+Light Blue Carpet	481	light_blue_carpet
+Light Blue Concrete	649	light_blue_concrete
+Light Blue Concrete Powder	665	light_blue_concrete_powder
+Light Blue Glazed Terracotta	633	light_blue_glazed_terracotta
+Light Blue Shulker Box	617	light_blue_shulker_box
+Light Blue Stained Glass	272	light_blue_stained_glass
+Light Blue Stained Glass Pane	444	light_blue_stained_glass_pane
+Light Blue Terracotta	428	light_blue_terracotta
+(unnamed)	522	light_blue_wall_banner
+Light Blue Wool	133	light_blue_wool
+Light Gray Banner	511	light_gray_banner
+Light Gray Bed	111	light_gray_bed
+Light Gray Candle	878	light_gray_candle
+Cake with Light Gray Candle	895	light_gray_candle_cake
+Light Gray Carpet	486	light_gray_carpet
+Light Gray Concrete	654	light_gray_concrete
+Light Gray Concrete Powder	670	light_gray_concrete_powder
+Light Gray Glazed Terracotta	638	light_gray_glazed_terracotta
+Light Gray Shulker Box	622	light_gray_shulker_box
+Light Gray Stained Glass	277	light_gray_stained_glass
+Light Gray Stained Glass Pane	449	light_gray_stained_glass_pane
+Light Gray Terracotta	433	light_gray_terracotta
+(unnamed)	527	light_gray_wall_banner
+Light Gray Wool	138	light_gray_wool
+Light Weighted Pressure Plate	412	light_weighted_pressure_plate
+Lightning Rod	953	lightning_rod
+Lilac	498	lilac
+Lily of the Valley	160	lily_of_the_valley
+Lily Pad	324	lily_pad
+Lime Banner	508	lime_banner
+Lime Bed	108	lime_bed
+Lime Candle	875	lime_candle
+Cake with Lime Candle	892	lime_candle_cake
+Lime Carpet	483	lime_carpet
+Lime Concrete	651	lime_concrete
+Lime Concrete Powder	667	lime_concrete_powder
+Lime Glazed Terracotta	635	lime_glazed_terracotta
+Lime Shulker Box	619	lime_shulker_box
+Lime Stained Glass	274	lime_stained_glass
+Lime Stained Glass Pane	446	lime_stained_glass_pane
+Lime Terracotta	430	lime_terracotta
+(unnamed)	524	lime_wall_banner
+Lime Wool	135	lime_wool
+Lodestone	848	lodestone
+Loom	773	loom
+Magenta Banner	505	magenta_banner
+Magenta Bed	105	magenta_bed
+Magenta Candle	872	magenta_candle
+Cake with Magenta Candle	889	magenta_candle_cake
+Magenta Carpet	480	magenta_carpet
+Magenta Concrete	648	magenta_concrete
+Magenta Concrete Powder	664	magenta_concrete_powder
+Magenta Glazed Terracotta	632	magenta_glazed_terracotta
+Magenta Shulker Box	616	magenta_shulker_box
+Magenta Stained Glass	271	magenta_stained_glass
+Magenta Stained Glass Pane	443	magenta_stained_glass_pane
+Magenta Terracotta	427	magenta_terracotta
+(unnamed)	521	magenta_wall_banner
+Magenta Wool	132	magenta_wool
+Magma Block	607	magma_block
+Mangrove Button	392	mangrove_button
+Mangrove Door	589	mangrove_door
+Mangrove Fence	581	mangrove_fence
+Mangrove Fence Gate	573	mangrove_fence_gate
+Mangrove Hanging Sign	217	mangrove_hanging_sign
+Mangrove Leaves	89	mangrove_leaves
+Mangrove Log	53	mangrove_log
+Mangrove Planks	20	mangrove_planks
+Mangrove Pressure Plate	240	mangrove_pressure_plate
+Mangrove Propagule	30	mangrove_propagule
+Mangrove Roots	54	mangrove_roots
+Mangrove Sign	193	mangrove_sign
+Mangrove Slab	546	mangrove_slab
+Mangrove Stairs	460	mangrove_stairs
+Mangrove Trapdoor	292	mangrove_trapdoor
+Mangrove Wall Hanging Sign	226	mangrove_wall_hanging_sign
+Mangrove Wall Sign	206	mangrove_wall_sign
+Mangrove Wood	73	mangrove_wood
+Medium Amethyst Bud	907	medium_amethyst_bud
+Melon	312	melon
+Melon Stem	316	melon_stem
+Moss Block	963	moss_block
+Moss Carpet	961	moss_carpet
+Mossy Cobblestone	169	mossy_cobblestone
+Mossy Cobblestone Slab	750	mossy_cobblestone_slab
+Mossy Cobblestone Stairs	736	mossy_cobblestone_stairs
+Mossy Cobblestone Wall	354	mossy_cobblestone_wall
+Mossy Stone Brick Slab	748	mossy_stone_brick_slab
+Mossy Stone Brick Stairs	734	mossy_stone_brick_stairs
+Mossy Stone Brick Wall	762	mossy_stone_brick_wall
+Mossy Stone Bricks	295	mossy_stone_bricks
+Moving Piston	146	moving_piston
+Mud	969	mud
+Mud Brick Slab	557	mud_brick_slab
+Mud Brick Stairs	322	mud_brick_stairs
+Mud Brick Wall	765	mud_brick_wall
+Mud Bricks	299	mud_bricks
+Muddy Mangrove Roots	55	muddy_mangrove_roots
+Mushroom Stem	308	mushroom_stem
+Mycelium	323	mycelium
+Nether Brick Fence	326	nether_brick_fence
+Nether Brick Slab	558	nether_brick_slab
+Nether Brick Stairs	327	nether_brick_stairs
+Nether Brick Wall	766	nether_brick_wall
+Nether Bricks	325	nether_bricks
+Nether Gold Ore	45	nether_gold_ore
+Nether Portal	264	nether_portal
+Nether Quartz Ore	417	nether_quartz_ore
+Nether Sprouts	797	nether_sprouts
+Nether Wart	328	nether_wart
+Nether Wart Block	608	nether_wart_block
+Block of Netherite	840	netherite_block
+Netherrack	256	netherrack
+Note Block	102	note_block
+Oak Button	385	oak_button
+Oak Door	195	oak_door
+Oak Fence	254	oak_fence
+Oak Fence Gate	319	oak_fence_gate
+Oak Hanging Sign	208	oak_hanging_sign
+Oak Leaves	82	oak_leaves
+Oak Log	46	oak_log
+Oak Planks	13	oak_planks
+Oak Pressure Plate	233	oak_pressure_plate
+Oak Sapling	23	oak_sapling
+Oak Sign	186	oak_sign
+Oak Slab	539	oak_slab
+Oak Stairs	176	oak_stairs
+Oak Trapdoor	285	oak_trapdoor
+Oak Wall Hanging Sign	219	oak_wall_hanging_sign
+Oak Wall Sign	199	oak_wall_sign
+Oak Wood	66	oak_wood
+Observer	612	observer
+Obsidian	170	obsidian
+Ochre Froglight	997	ochre_froglight
+Orange Banner	504	orange_banner
+Orange Bed	104	orange_bed
+Orange Candle	871	orange_candle
+Cake with Orange Candle	888	orange_candle_cake
+Orange Carpet	479	orange_carpet
+Orange Concrete	647	orange_concrete
+Orange Concrete Powder	663	orange_concrete_powder
+Orange Glazed Terracotta	631	orange_glazed_terracotta
+Orange Shulker Box	615	orange_shulker_box
+Orange Stained Glass	270	orange_stained_glass
+Orange Stained Glass Pane	442	orange_stained_glass_pane
+Orange Terracotta	426	orange_terracotta
+Orange Tulip	154	orange_tulip
+(unnamed)	520	orange_wall_banner
+Orange Wool	131	orange_wool
+Oxeye Daisy	157	oxeye_daisy
+Oxidized Copper	919	oxidized_copper
+Oxidized Cut Copper	925	oxidized_cut_copper
+Oxidized Cut Copper Slab	933	oxidized_cut_copper_slab
+Oxidized Cut Copper Stairs	929	oxidized_cut_copper_stairs
+Packed Ice	496	packed_ice
+Packed Mud	298	packed_mud
+Pearlescent Froglight	999	pearlescent_froglight
+Peony	500	peony
+Petrified Oak Slab	553	petrified_oak_slab
+Piglin Head	406	piglin_head
+Piglin Wall Head	407	piglin_wall_head
+Pink Banner	509	pink_banner
+Pink Bed	109	pink_bed
+Pink Candle	876	pink_candle
+Cake with Pink Candle	893	pink_candle_cake
+Pink Carpet	484	pink_carpet
+Pink Concrete	652	pink_concrete
+Pink Concrete Powder	668	pink_concrete_powder
+Pink Glazed Terracotta	636	pink_glazed_terracotta
+Pink Petals	962	pink_petals
+Pink Shulker Box	620	pink_shulker_box
+Pink Stained Glass	275	pink_stained_glass
+Pink Stained Glass Pane	447	pink_stained_glass_pane
+Pink Terracotta	431	pink_terracotta
+Pink Tulip	156	pink_tulip
+(unnamed)	525	pink_wall_banner
+Pink Wool	136	pink_wool
+Piston	128	piston
+Piston Head	129	piston_head
+Pitcher Crop	599	pitcher_crop
+Pitcher Plant	600	pitcher_plant
+Player Head	400	player_head
+Player Wall Head	401	player_wall_head
+Podzol	11	podzol
+Pointed Dripstone	954	pointed_dripstone
+Polished Andesite	7	polished_andesite
+Polished Andesite Slab	757	polished_andesite_slab
+Polished Andesite Stairs	744	polished_andesite_stairs
+Polished Basalt	260	polished_basalt
+Polished Blackstone	853	polished_blackstone
+Polished Blackstone Brick Slab	857	polished_blackstone_brick_slab
+Polished Blackstone Brick Stairs	858	polished_blackstone_brick_stairs
+Polished Blackstone Brick Wall	859	polished_blackstone_brick_wall
+Polished Blackstone Bricks	854	polished_blackstone_bricks
+Polished Blackstone Button	864	polished_blackstone_button
+Polished Blackstone Pressure Plate	863	polished_blackstone_pressure_plate
+Polished Blackstone Slab	862	polished_blackstone_slab
+Polished Blackstone Stairs	861	polished_blackstone_stairs
+Polished Blackstone Wall	865	polished_blackstone_wall
+Polished Deepslate	975	polished_deepslate
+Polished Deepslate Slab	977	polished_deepslate_slab
+Polished Deepslate Stairs	976	polished_deepslate_stairs
+Polished Deepslate Wall	978	polished_deepslate_wall
+Polished Diorite	5	polished_diorite
+Polished Diorite Slab	749	polished_diorite_slab
+Polished Diorite Stairs	735	polished_diorite_stairs
+Polished Granite	3	polished_granite
+Polished Granite Slab	746	polished_granite_slab
+Polished Granite Stairs	732	polished_granite_stairs
+Poppy	149	poppy
+Potatoes	384	potatoes
+Potted Acacia Sapling	361	potted_acacia_sapling
+Potted Allium	369	potted_allium
+Potted Azalea	995	potted_azalea_bush
+Potted Azure Bluet	370	potted_azure_bluet
+Potted Bamboo	728	potted_bamboo
+Potted Birch Sapling	359	potted_birch_sapling
+Potted Blue Orchid	368	potted_blue_orchid
+Potted Brown Mushroom	380	potted_brown_mushroom
+Potted Cactus	382	potted_cactus
+Potted Cherry Sapling	362	potted_cherry_sapling
+Potted Cornflower	376	potted_cornflower
+Potted Crimson Fungus	844	potted_crimson_fungus
+Potted Crimson Roots	846	potted_crimson_roots
+Potted Dandelion	366	potted_dandelion
+Potted Dark Oak Sapling	363	potted_dark_oak_sapling
+Potted Dead Bush	381	potted_dead_bush
+Potted Fern	365	potted_fern
+Potted Flowering Azalea	996	potted_flowering_azalea_bush
+Potted Jungle Sapling	360	potted_jungle_sapling
+Potted Lily of the Valley	377	potted_lily_of_the_valley
+Potted Mangrove Propagule	364	potted_mangrove_propagule
+Potted Oak Sapling	357	potted_oak_sapling
+Potted Orange Tulip	372	potted_orange_tulip
+Potted Oxeye Daisy	375	potted_oxeye_daisy
+Potted Pink Tulip	374	potted_pink_tulip
+Potted Poppy	367	potted_poppy
+Potted Red Mushroom	379	potted_red_mushroom
+Potted Red Tulip	371	potted_red_tulip
+Potted Spruce Sapling	358	potted_spruce_sapling
+Potted Torchflower	356	potted_torchflower
+Potted Warped Fungus	845	potted_warped_fungus
+Potted Warped Roots	847	potted_warped_roots
+Potted White Tulip	373	potted_white_tulip
+Potted Wither Rose	378	potted_wither_rose
+Powder Snow	912	powder_snow
+Powder Snow Cauldron	334	powder_snow_cauldron
+Powered Rail	119	powered_rail
+Prismarine	467	prismarine
+Prismarine Brick Slab	474	prismarine_brick_slab
+Prismarine Brick Stairs	471	prismarine_brick_stairs
+Prismarine Bricks	468	prismarine_bricks
+Prismarine Slab	473	prismarine_slab
+Prismarine Stairs	470	prismarine_stairs
+Prismarine Wall	760	prismarine_wall
+Pumpkin	255	pumpkin
+Pumpkin Stem	315	pumpkin_stem
+Purple Banner	513	purple_banner
+Purple Bed	113	purple_bed
+Purple Candle	880	purple_candle
+Cake with Purple Candle	897	purple_candle_cake
+Purple Carpet	488	purple_carpet
+Purple Concrete	656	purple_concrete
+Purple Concrete Powder	672	purple_concrete_powder
+Purple Glazed Terracotta	640	purple_glazed_terracotta
+Purple Shulker Box	624	purple_shulker_box
+Purple Stained Glass	279	purple_stained_glass
+Purple Stained Glass Pane	451	purple_stained_glass_pane
+Purple Terracotta	435	purple_terracotta
+(unnamed)	529	purple_wall_banner
+Purple Wool	140	purple_wool
+Purpur Block	594	purpur_block
+Purpur Pillar	595	purpur_pillar
+Purpur Slab	562	purpur_slab
+Purpur Stairs	596	purpur_stairs
+Block of Quartz	419	quartz_block
+Quartz Bricks	868	quartz_bricks
+Quartz Pillar	421	quartz_pillar
+Quartz Slab	559	quartz_slab
+Quartz Stairs	422	quartz_stairs
+Rail	197	rail
+Block of Raw Copper	993	raw_copper_block
+Block of Raw Gold	994	raw_gold_block
+Block of Raw Iron	992	raw_iron_block
+Red Banner	517	red_banner
+Red Bed	117	red_bed
+Red Candle	884	red_candle
+Cake with Red Candle	901	red_candle_cake
+Red Carpet	492	red_carpet
+Red Concrete	660	red_concrete
+Red Concrete Powder	676	red_concrete_powder
+Red Glazed Terracotta	644	red_glazed_terracotta
+Red Mushroom	162	red_mushroom
+Red Mushroom Block	307	red_mushroom_block
+Red Nether Brick Slab	756	red_nether_brick_slab
+Red Nether Brick Stairs	743	red_nether_brick_stairs
+Red Nether Brick Wall	768	red_nether_brick_wall
+Red Nether Bricks	609	red_nether_bricks
+Red Sand	36	red_sand
+Red Sandstone	535	red_sandstone
+Red Sandstone Slab	560	red_sandstone_slab
+Red Sandstone Stairs	538	red_sandstone_stairs
+Red Sandstone Wall	761	red_sandstone_wall
+Red Shulker Box	628	red_shulker_box
+Red Stained Glass	283	red_stained_glass
+Red Stained Glass Pane	455	red_stained_glass_pane
+Red Terracotta	439	red_terracotta
+Red Tulip	153	red_tulip
+(unnamed)	533	red_wall_banner
+Red Wool	144	red_wool
+Block of Redstone	416	redstone_block
+Redstone Lamp	339	redstone_lamp
+Redstone Ore	242	redstone_ore
+Redstone Torch	244	redstone_torch
+Redstone Wall Torch	245	redstone_wall_torch
+Redstone Wire	178	redstone_wire
+Reinforced Deepslate	1001	reinforced_deepslate
+Redstone Repeater	268	repeater
+Repeating Command Block	604	repeating_command_block
+Respawn Anchor	843	respawn_anchor
+Rooted Dirt	968	rooted_dirt
+Rose Bush	499	rose_bush
+Sand	34	sand
+Sandstone	99	sandstone
+Sandstone Slab	551	sandstone_slab
+Sandstone Stairs	341	sandstone_stairs
+Sandstone Wall	769	sandstone_wall
+Scaffolding	772	scaffolding
+Sculk	915	sculk
+Sculk Catalyst	917	sculk_catalyst
+Sculk Sensor	913	sculk_sensor
+Sculk Shrieker	918	sculk_shrieker
+Sculk Vein	916	sculk_vein
+Sea Lantern	476	sea_lantern
+Sea Pickle	723	sea_pickle
+Seagrass	126	seagrass
+Shroomlight	804	shroomlight
+Shulker Box	613	shulker_box
+Skeleton Skull	394	skeleton_skull
+Skeleton Wall Skull	395	skeleton_wall_skull
+Slime Block	463	slime_block
+Small Amethyst Bud	908	small_amethyst_bud
+Small Dripleaf	966	small_dripleaf
+Smithing Table	781	smithing_table
+Smoker	775	smoker
+Smooth Basalt	991	smooth_basalt
+Smooth Quartz Block	565	smooth_quartz
+Smooth Quartz Slab	753	smooth_quartz_slab
+Smooth Quartz Stairs	740	smooth_quartz_stairs
+Smooth Red Sandstone	566	smooth_red_sandstone
+Smooth Red Sandstone Slab	747	smooth_red_sandstone_slab
+Smooth Red Sandstone Stairs	733	smooth_red_sandstone_stairs
+Smooth Sandstone	564	smooth_sandstone
+Smooth Sandstone Slab	752	smooth_sandstone_slab
+Smooth Sandstone Stairs	739	smooth_sandstone_stairs
+Smooth Stone	563	smooth_stone
+Smooth Stone Slab	550	smooth_stone_slab
+Sniffer Egg	682	sniffer_egg
+Snow	247	snow
+Snow Block	249	snow_block
+Soul Campfire	787	soul_campfire
+Soul Fire	174	soul_fire
+Soul Lantern	785	soul_lantern
+Soul Sand	257	soul_sand
+Soul Soil	258	soul_soil
+Soul Torch	261	soul_torch
+Soul Wall Torch	262	soul_wall_torch
+Monster Spawner	175	spawner
+Sponge	92	sponge
+Spore Blossom	958	spore_blossom
+Spruce Button	386	spruce_button
+Spruce Door	583	spruce_door
+Spruce Fence	575	spruce_fence
+Spruce Fence Gate	567	spruce_fence_gate
+Spruce Hanging Sign	209	spruce_hanging_sign
+Spruce Leaves	83	spruce_leaves
+Spruce Log	47	spruce_log
+Spruce Planks	14	spruce_planks
+Spruce Pressure Plate	234	spruce_pressure_plate
+Spruce Sapling	24	spruce_sapling
+Spruce Sign	187	spruce_sign
+Spruce Slab	540	spruce_slab
+Spruce Stairs	348	spruce_stairs
+Spruce Trapdoor	286	spruce_trapdoor
+Spruce Wall Hanging Sign	220	spruce_wall_hanging_sign
+Spruce Wall Sign	200	spruce_wall_sign
+Spruce Wood	67	spruce_wood
+Sticky Piston	121	sticky_piston
+Stone	1	stone
+Stone Brick Slab	556	stone_brick_slab
+Stone Brick Stairs	321	stone_brick_stairs
+Stone Brick Wall	764	stone_brick_wall
+Stone Bricks	294	stone_bricks
+Stone Button	246	stone_button
+Stone Pressure Plate	231	stone_pressure_plate
+Stone Slab	549	stone_slab
+Stone Stairs	738	stone_stairs
+Stonecutter	782	stonecutter
+Stripped Acacia Log	60	stripped_acacia_log
+Stripped Acacia Wood	78	stripped_acacia_wood
+Block of Stripped Bamboo	65	stripped_bamboo_block
+Stripped Birch Log	58	stripped_birch_log
+Stripped Birch Wood	76	stripped_birch_wood
+Stripped Cherry Log	61	stripped_cherry_log
+Stripped Cherry Wood	79	stripped_cherry_wood
+Stripped Crimson Hyphae	801	stripped_crimson_hyphae
+Stripped Crimson Stem	799	stripped_crimson_stem
+Stripped Dark Oak Log	62	stripped_dark_oak_log
+Stripped Dark Oak Wood	80	stripped_dark_oak_wood
+Stripped Jungle Log	59	stripped_jungle_log
+Stripped Jungle Wood	77	stripped_jungle_wood
+Stripped Mangrove Log	64	stripped_mangrove_log
+Stripped Mangrove Wood	81	stripped_mangrove_wood
+Stripped Oak Log	63	stripped_oak_log
+Stripped Oak Wood	74	stripped_oak_wood
+Stripped Spruce Log	57	stripped_spruce_log
+Stripped Spruce Wood	75	stripped_spruce_wood
+Stripped Warped Hyphae	792	stripped_warped_hyphae
+Stripped Warped Stem	790	stripped_warped_stem
+Structure Block	832	structure_block
+Structure Void	611	structure_void
+Sugar Cane	252	sugar_cane
+Sunflower	497	sunflower
+Suspicious Gravel	38	suspicious_gravel
+Suspicious Sand	35	suspicious_sand
+Sweet Berry Bush	788	sweet_berry_bush
+Tall Grass	501	tall_grass
+Tall Seagrass	127	tall_seagrass
+Target	835	target
+Terracotta	494	terracotta
+Tinted Glass	911	tinted_glass
+TNT	166	tnt
+Torch	171	torch
+Torchflower	148	torchflower
+Torchflower Crop	598	torchflower_crop
+Trapped Chest	411	trapped_chest
+Tripwire	346	tripwire
+Tripwire Hook	345	tripwire_hook
+Tube Coral	698	tube_coral
+Tube Coral Block	688	tube_coral_block
+Tube Coral Fan	708	tube_coral_fan
+Tube Coral Wall Fan	718	tube_coral_wall_fan
+Tuff	909	tuff
+Turtle Egg	681	turtle_egg
+Twisting Vines	807	twisting_vines
+Twisting Vines Plant	808	twisting_vines_plant
+Verdant Froglight	998	verdant_froglight
+Vines	317	vine
+Void Air	729	void_air
+Wall Torch	172	wall_torch
+Warped Button	825	warped_button
+Warped Door	827	warped_door
+Warped Fence	817	warped_fence
+Warped Fence Gate	821	warped_fence_gate
+Warped Fungus	794	warped_fungus
+Warped Hanging Sign	216	warped_hanging_sign
+Warped Hyphae	791	warped_hyphae
+Warped Nylium	793	warped_nylium
+Warped Planks	811	warped_planks
+Warped Pressure Plate	815	warped_pressure_plate
+Warped Roots	796	warped_roots
+Warped Sign	829	warped_sign
+Warped Slab	813	warped_slab
+Warped Stairs	823	warped_stairs
+Warped Stem	789	warped_stem
+Warped Trapdoor	819	warped_trapdoor
+Warped Wall Hanging Sign	228	warped_wall_hanging_sign
+Warped Wall Sign	831	warped_wall_sign
+Warped Wart Block	795	warped_wart_block
+Water	32	water
+Water Cauldron	332	water_cauldron
+Waxed Block of Copper	937	waxed_copper_block
+Waxed Cut Copper	944	waxed_cut_copper
+Waxed Cut Copper Slab	952	waxed_cut_copper_slab
+Waxed Cut Copper Stairs	948	waxed_cut_copper_stairs
+Waxed Exposed Copper	939	waxed_exposed_copper
+Waxed Exposed Cut Copper	943	waxed_exposed_cut_copper
+Waxed Exposed Cut Copper Slab	951	waxed_exposed_cut_copper_slab
+Waxed Exposed Cut Copper Stairs	947	waxed_exposed_cut_copper_stairs
+Waxed Oxidized Copper	940	waxed_oxidized_copper
+Waxed Oxidized Cut Copper	941	waxed_oxidized_cut_copper
+Waxed Oxidized Cut Copper Slab	949	waxed_oxidized_cut_copper_slab
+Waxed Oxidized Cut Copper Stairs	945	waxed_oxidized_cut_copper_stairs
+Waxed Weathered Copper	938	waxed_weathered_copper
+Waxed Weathered Cut Copper	942	waxed_weathered_cut_copper
+Waxed Weathered Cut Copper Slab	950	waxed_weathered_cut_copper_slab
+Waxed Weathered Cut Copper Stairs	946	waxed_weathered_cut_copper_stairs
+Weathered Copper	920	weathered_copper
+Weathered Cut Copper	926	weathered_cut_copper
+Weathered Cut Copper Slab	934	weathered_cut_copper_slab
+Weathered Cut Copper Stairs	930	weathered_cut_copper_stairs
+Weeping Vines	805	weeping_vines
+Weeping Vines Plant	806	weeping_vines_plant
+Wet Sponge	93	wet_sponge
+Wheat Crops	183	wheat
+White Banner	503	white_banner
+White Bed	103	white_bed
+White Candle	870	white_candle
+Cake with White Candle	887	white_candle_cake
+White Carpet	478	white_carpet
+White Concrete	646	white_concrete
+White Concrete Powder	662	white_concrete_powder
+White Glazed Terracotta	630	white_glazed_terracotta
+White Shulker Box	614	white_shulker_box
+White Stained Glass	269	white_stained_glass
+White Stained Glass Pane	441	white_stained_glass_pane
+White Terracotta	425	white_terracotta
+White Tulip	155	white_tulip
+(unnamed)	519	white_wall_banner
+White Wool	130	white_wool
+Wither Rose	159	wither_rose
+Wither Skeleton Skull	396	wither_skeleton_skull
+Wither Skeleton Wall Skull	397	wither_skeleton_wall_skull
+Yellow Banner	507	yellow_banner
+Yellow Bed	107	yellow_bed
+Yellow Candle	874	yellow_candle
+Cake with Yellow Candle	891	yellow_candle_cake
+Yellow Carpet	482	yellow_carpet
+Yellow Concrete	650	yellow_concrete
+Yellow Concrete Powder	666	yellow_concrete_powder
+Yellow Glazed Terracotta	634	yellow_glazed_terracotta
+Yellow Shulker Box	618	yellow_shulker_box
+Yellow Stained Glass	273	yellow_stained_glass
+Yellow Stained Glass Pane	445	yellow_stained_glass_pane
+Yellow Terracotta	429	yellow_terracotta
+(unnamed)	523	yellow_wall_banner
+Yellow Wool	134	yellow_wool
+Zombie Head	398	zombie_head
+Zombie Wall Head	399	zombie_wall_head

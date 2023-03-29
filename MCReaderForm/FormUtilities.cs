@@ -73,5 +73,48 @@ namespace MCReaderForm
             TreeToString_Rec(root, sb, 0);
             return sb.ToString();
         }
+
+
+        public static TreeNode EnumerateList(List<INBTTag> list)
+        {
+            TreeNode res = new TreeNode();
+            for (int i = 0; i < list.Count; i++)
+            {
+                INBTTag tag = list[i];
+                TreeNode temp;
+                if ((tag is TAG_Compound) || (tag is TAG_List))
+                {
+                    List<INBTTag> tagList = ((List<INBTTag>)tag.Data());
+                    temp = EnumerateList(tagList);
+                    temp.Text = tag.Name();
+                }
+                else if ((tag is TAG_Int_Array) || (tag is TAG_Long_Array))
+                {
+                    INBTTag[] tagArr = ((INBTTag[])tag.Data());
+                    temp = EnumerateList(tagArr.ToList());
+                    temp.Text = tag.Name();
+                }
+                else
+                {
+                    temp = new TreeNode(tag.ToString());
+                }
+
+                int imgIdx = (int)INBTTag.IDOf(tag);
+                temp.ImageIndex = imgIdx;
+                temp.SelectedImageIndex = imgIdx;
+
+                if (i == 0 && tag is TAG_Compound && (tag as TAG_Compound).IsRoot)
+                {
+                    res = temp;
+                }
+                else
+                {
+                    res.Nodes.Add(temp);
+                }
+            }
+
+            return res;
+        }
+
     }
 }
