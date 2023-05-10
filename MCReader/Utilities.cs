@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+global using static MCReader.RunOptions;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +48,10 @@ namespace MCReader
             {
                 return true;
             }
+            else if (a is null || b is null)
+            {
+                return false;
+            }
 
             return (a.EndsWith(":" + b) || b.EndsWith(":" + a));
         }
@@ -64,12 +71,12 @@ namespace MCReader
 
             if (IsGZipped(file))
             {
-                Log("File " + file + "' is GZipped");
+                //Log("File " + file + "' is GZipped");
                 input = UnzipFile(file);
             }
             else
             {
-                Log("File " + file + "' is plaintext");
+                //Log("File " + file + "' is plaintext");
                 input = File.OpenRead(file);
             }
 
@@ -113,7 +120,7 @@ namespace MCReader
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Console.WriteLine("IsGZipped(" + filePath + ") failed -> " + e.ToString());
             }
 
 

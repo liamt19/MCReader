@@ -40,7 +40,7 @@
             this.listViewChunks = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageNBT = new System.Windows.Forms.TabPage();
             this.tabPageItemFinder = new System.Windows.Forms.TabPage();
             this.buttonChestFinderSearchFolder = new System.Windows.Forms.Button();
@@ -57,17 +57,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChestFinderSearchSelected = new System.Windows.Forms.Button();
             this.tabPageVillagerTrades = new System.Windows.Forms.TabPage();
+            this.cbVillagerTradesWhitelist = new System.Windows.Forms.CheckBox();
             this.buttonVillagerTradesSearchRegion = new System.Windows.Forms.Button();
             this.buttonVillagerTradesSearchFolder = new System.Windows.Forms.Button();
             this.tbVillagerTradesResults = new System.Windows.Forms.TextBox();
+            this.tabPageEnumerateEntities = new System.Windows.Forms.TabPage();
+            this.buttonEntitiesSearchFolder = new System.Windows.Forms.Button();
+            this.tbEnumerateEntities = new System.Windows.Forms.TextBox();
+            this.tabPageEnumerateChests = new System.Windows.Forms.TabPage();
+            this.buttonChestsSearchFolder = new System.Windows.Forms.Button();
+            this.tbEnumerateChests = new System.Windows.Forms.TextBox();
             this.folderBrowserSearch = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonOpenEntityRegionFile = new System.Windows.Forms.Button();
             this.cbExpandNBTTree = new System.Windows.Forms.CheckBox();
-            this.tabControl1.SuspendLayout();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tabControl.SuspendLayout();
             this.tabPageNBT.SuspendLayout();
             this.tabPageItemFinder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPageVillagerTrades.SuspendLayout();
+            this.tabPageEnumerateEntities.SuspendLayout();
+            this.tabPageEnumerateChests.SuspendLayout();
             this.SuspendLayout();
             // 
             // tree
@@ -168,19 +178,21 @@
             // 
             this.columnHeader2.Text = "Z";
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPageNBT);
-            this.tabControl1.Controls.Add(this.tabPageItemFinder);
-            this.tabControl1.Controls.Add(this.tabPageVillagerTrades);
-            this.tabControl1.Location = new System.Drawing.Point(143, 46);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(609, 439);
-            this.tabControl1.TabIndex = 6;
+            this.tabControl.Controls.Add(this.tabPageNBT);
+            this.tabControl.Controls.Add(this.tabPageItemFinder);
+            this.tabControl.Controls.Add(this.tabPageVillagerTrades);
+            this.tabControl.Controls.Add(this.tabPageEnumerateEntities);
+            this.tabControl.Controls.Add(this.tabPageEnumerateChests);
+            this.tabControl.Location = new System.Drawing.Point(143, 46);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(609, 439);
+            this.tabControl.TabIndex = 6;
             // 
             // tabPageNBT
             // 
@@ -252,6 +264,7 @@
             this.checkBoxFinderEntities.TabIndex = 1;
             this.checkBoxFinderEntities.Text = "Entities";
             this.checkBoxFinderEntities.UseVisualStyleBackColor = true;
+            this.checkBoxFinderEntities.CheckedChanged += new System.EventHandler(this.checkBoxFinderEntities_CheckedChanged);
             // 
             // checkBoxFinderBlockEntities
             // 
@@ -264,12 +277,12 @@
             this.checkBoxFinderBlockEntities.TabIndex = 0;
             this.checkBoxFinderBlockEntities.Text = "Block entities";
             this.checkBoxFinderBlockEntities.UseVisualStyleBackColor = true;
+            this.checkBoxFinderBlockEntities.CheckedChanged += new System.EventHandler(this.checkBoxFinderBlockEntities_CheckedChanged);
             // 
             // cbFinderInternalName
             // 
             this.cbFinderInternalName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbFinderInternalName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbFinderInternalName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFinderInternalName.FormattingEnabled = true;
             this.cbFinderInternalName.Location = new System.Drawing.Point(237, 28);
             this.cbFinderInternalName.Name = "cbFinderInternalName";
@@ -278,9 +291,8 @@
             // 
             // cbFinderName
             // 
-            this.cbFinderName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFinderName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbFinderName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbFinderName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFinderName.FormattingEnabled = true;
             this.cbFinderName.Location = new System.Drawing.Point(7, 28);
             this.cbFinderName.Name = "cbFinderName";
@@ -346,6 +358,7 @@
             // 
             // tabPageVillagerTrades
             // 
+            this.tabPageVillagerTrades.Controls.Add(this.cbVillagerTradesWhitelist);
             this.tabPageVillagerTrades.Controls.Add(this.buttonVillagerTradesSearchRegion);
             this.tabPageVillagerTrades.Controls.Add(this.buttonVillagerTradesSearchFolder);
             this.tabPageVillagerTrades.Controls.Add(this.tbVillagerTradesResults);
@@ -356,6 +369,16 @@
             this.tabPageVillagerTrades.TabIndex = 2;
             this.tabPageVillagerTrades.Text = "Villager Trades";
             this.tabPageVillagerTrades.UseVisualStyleBackColor = true;
+            // 
+            // cbVillagerTradesWhitelist
+            // 
+            this.cbVillagerTradesWhitelist.AutoSize = true;
+            this.cbVillagerTradesWhitelist.Location = new System.Drawing.Point(238, 9);
+            this.cbVillagerTradesWhitelist.Name = "cbVillagerTradesWhitelist";
+            this.cbVillagerTradesWhitelist.Size = new System.Drawing.Size(152, 19);
+            this.cbVillagerTradesWhitelist.TabIndex = 18;
+            this.cbVillagerTradesWhitelist.Text = "Include all villager types";
+            this.cbVillagerTradesWhitelist.UseVisualStyleBackColor = true;
             // 
             // buttonVillagerTradesSearchRegion
             // 
@@ -390,6 +413,76 @@
             this.tbVillagerTradesResults.TabIndex = 15;
             this.tbVillagerTradesResults.WordWrap = false;
             // 
+            // tabPageEnumerateEntities
+            // 
+            this.tabPageEnumerateEntities.Controls.Add(this.buttonEntitiesSearchFolder);
+            this.tabPageEnumerateEntities.Controls.Add(this.tbEnumerateEntities);
+            this.tabPageEnumerateEntities.Location = new System.Drawing.Point(4, 24);
+            this.tabPageEnumerateEntities.Name = "tabPageEnumerateEntities";
+            this.tabPageEnumerateEntities.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEnumerateEntities.Size = new System.Drawing.Size(601, 411);
+            this.tabPageEnumerateEntities.TabIndex = 3;
+            this.tabPageEnumerateEntities.Text = "Enumerate Entities";
+            this.tabPageEnumerateEntities.UseVisualStyleBackColor = true;
+            // 
+            // buttonEntitiesSearchFolder
+            // 
+            this.buttonEntitiesSearchFolder.Location = new System.Drawing.Point(6, 6);
+            this.buttonEntitiesSearchFolder.Name = "buttonEntitiesSearchFolder";
+            this.buttonEntitiesSearchFolder.Size = new System.Drawing.Size(129, 23);
+            this.buttonEntitiesSearchFolder.TabIndex = 17;
+            this.buttonEntitiesSearchFolder.Text = "Search folder";
+            this.buttonEntitiesSearchFolder.UseVisualStyleBackColor = true;
+            this.buttonEntitiesSearchFolder.Click += new System.EventHandler(this.buttonEntitiesSearchFolder_Click);
+            // 
+            // tbEnumerateEntities
+            // 
+            this.tbEnumerateEntities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnumerateEntities.Location = new System.Drawing.Point(2, 35);
+            this.tbEnumerateEntities.Multiline = true;
+            this.tbEnumerateEntities.Name = "tbEnumerateEntities";
+            this.tbEnumerateEntities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbEnumerateEntities.Size = new System.Drawing.Size(596, 374);
+            this.tbEnumerateEntities.TabIndex = 16;
+            this.tbEnumerateEntities.WordWrap = false;
+            // 
+            // tabPageEnumerateChests
+            // 
+            this.tabPageEnumerateChests.Controls.Add(this.buttonChestsSearchFolder);
+            this.tabPageEnumerateChests.Controls.Add(this.tbEnumerateChests);
+            this.tabPageEnumerateChests.Location = new System.Drawing.Point(4, 24);
+            this.tabPageEnumerateChests.Name = "tabPageEnumerateChests";
+            this.tabPageEnumerateChests.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEnumerateChests.Size = new System.Drawing.Size(601, 411);
+            this.tabPageEnumerateChests.TabIndex = 4;
+            this.tabPageEnumerateChests.Text = "Enumerate Chests";
+            this.tabPageEnumerateChests.UseVisualStyleBackColor = true;
+            // 
+            // buttonChestsSearchFolder
+            // 
+            this.buttonChestsSearchFolder.Location = new System.Drawing.Point(6, 6);
+            this.buttonChestsSearchFolder.Name = "buttonChestsSearchFolder";
+            this.buttonChestsSearchFolder.Size = new System.Drawing.Size(129, 23);
+            this.buttonChestsSearchFolder.TabIndex = 19;
+            this.buttonChestsSearchFolder.Text = "Search folder";
+            this.buttonChestsSearchFolder.UseVisualStyleBackColor = true;
+            this.buttonChestsSearchFolder.Click += new System.EventHandler(this.buttonChestsSearchFolder_Click);
+            // 
+            // tbEnumerateChests
+            // 
+            this.tbEnumerateChests.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnumerateChests.Location = new System.Drawing.Point(2, 35);
+            this.tbEnumerateChests.Multiline = true;
+            this.tbEnumerateChests.Name = "tbEnumerateChests";
+            this.tbEnumerateChests.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbEnumerateChests.Size = new System.Drawing.Size(596, 374);
+            this.tbEnumerateChests.TabIndex = 18;
+            this.tbEnumerateChests.WordWrap = false;
+            // 
             // buttonOpenEntityRegionFile
             // 
             this.buttonOpenEntityRegionFile.Location = new System.Drawing.Point(143, 10);
@@ -403,8 +496,6 @@
             // cbExpandNBTTree
             // 
             this.cbExpandNBTTree.AutoSize = true;
-            this.cbExpandNBTTree.Checked = true;
-            this.cbExpandNBTTree.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbExpandNBTTree.Location = new System.Drawing.Point(493, 19);
             this.cbExpandNBTTree.Name = "cbExpandNBTTree";
             this.cbExpandNBTTree.Size = new System.Drawing.Size(120, 19);
@@ -412,6 +503,12 @@
             this.cbExpandNBTTree.Text = "Auto-expand NBT";
             this.cbExpandNBTTree.UseVisualStyleBackColor = true;
             this.cbExpandNBTTree.CheckedChanged += new System.EventHandler(this.cbExpandNBTTree_CheckedChanged);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // Form1
             // 
@@ -421,7 +518,7 @@
             this.ClientSize = new System.Drawing.Size(768, 494);
             this.Controls.Add(this.cbExpandNBTTree);
             this.Controls.Add(this.buttonOpenEntityRegionFile);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.listViewChunks);
             this.Controls.Add(this.buttonOpenRegion);
             this.Controls.Add(this.buttonCopyMCPath);
@@ -432,7 +529,7 @@
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPageNBT.ResumeLayout(false);
             this.tabPageItemFinder.ResumeLayout(false);
             this.tabPageItemFinder.PerformLayout();
@@ -440,6 +537,10 @@
             this.panel1.PerformLayout();
             this.tabPageVillagerTrades.ResumeLayout(false);
             this.tabPageVillagerTrades.PerformLayout();
+            this.tabPageEnumerateEntities.ResumeLayout(false);
+            this.tabPageEnumerateEntities.PerformLayout();
+            this.tabPageEnumerateChests.ResumeLayout(false);
+            this.tabPageEnumerateChests.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +558,7 @@
         private ListView listViewChunks;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private TabControl tabControl1;
+        private TabControl tabControl;
         private TabPage tabPageNBT;
         private TabPage tabPageItemFinder;
         private Button buttonChestFinderSearchSelected;
@@ -480,5 +581,13 @@
         private TextBox tbVillagerTradesResults;
         private Button buttonVillagerTradesSearchRegion;
         private CheckBox cbExpandNBTTree;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TabPage tabPageEnumerateEntities;
+        private Button buttonEntitiesSearchFolder;
+        private TextBox tbEnumerateEntities;
+        private TabPage tabPageEnumerateChests;
+        private Button buttonChestsSearchFolder;
+        private TextBox tbEnumerateChests;
+        private CheckBox cbVillagerTradesWhitelist;
     }
 }

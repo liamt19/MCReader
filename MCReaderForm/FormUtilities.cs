@@ -86,7 +86,24 @@ namespace MCReaderForm
                 {
                     List<INBTTag> tagList = ((List<INBTTag>)tag.Data());
                     temp = EnumerateList(tagList);
-                    temp.Text = tag.Name();
+                    string childTagID = tag.Name();
+                    
+                    if (tag is TAG_Compound && (childTagID == null || childTagID.Length < 1))
+                    {
+                        //  Many compounds are nameless, but have a "name"/"id" tag in them.
+                        //  If so, display them here.
+                        List<INBTTag> children = (List<INBTTag>)tag.Data();
+                        foreach (INBTTag child in children)
+                        {
+                            string cName = child.Name();
+                            if (cName == "id" || cName == "name" || cName == "identifier")
+                            {
+                                childTagID = "<" + child.Data() + ">";
+                                break;
+                            }
+                        }
+                    }
+                    temp.Text = childTagID;
                 }
                 else if ((tag is TAG_Int_Array) || (tag is TAG_Long_Array))
                 {

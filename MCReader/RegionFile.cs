@@ -9,10 +9,12 @@ namespace MCReader
     public class RegionFile
     {
         private BinaryReader br;
+        public string folderPath;
 
-        public RegionFile(Stream input)
+        public RegionFile(Stream input, string folderPath)
         {
             br = new BinaryReader(input);
+            this.folderPath = folderPath;
         }
 
         public List<Chunk> ReadChunks()
@@ -20,7 +22,7 @@ namespace MCReader
             List<Chunk> allChunks = new List<Chunk>();
             for (int i = 0; i < 1024; i++)
             {
-                allChunks.Add(new Chunk());
+                allChunks.Add(new Chunk(true, this.folderPath));
             }
 
             if (br.BaseStream.Length == 0)
@@ -73,12 +75,52 @@ namespace MCReader
 
                 byte[] buff = new byte[size];
                 br.Read(buff, 0, size);
-                c.Uncompress(buff);
+                if (!c.UncompressRegion(buff))
+                {
+                    Log("RegionFile.ReadChunks was called using entity files instead of region files!");
+                    break;
+                }
 
                 //Log("Read chunk " + i);
             }
 
             return generated;
+        }
+
+        public static List<INBTTag> GetAllChests(List<Chunk> list, bool ignoreItems = true)
+        {
+            List<INBTTag> chests = new List<INBTTag>();
+            foreach (Chunk c in list)
+            {
+                if (c.RegionNBT.Count == 0)
+                {
+                    continue;
+                }
+
+                TAG_Compound root = (TAG_Compound)(c.RegionNBT[0]);
+
+                object entityTag;
+                if (c.IsPre_1_17)
+                {
+                    root = (TAG_Compound)((List<INBTTag>)root.Data())[0];
+                    entityTag = root.GetChildData("TileEntities");
+                }
+                else
+                {
+                    entityTag = root.GetChildData("Entities");
+                }
+
+                if (entityTag != null)
+                {
+                    var entityTagList = (List<INBTTag>) entityTag;
+                    foreach (INBTTag entity in entityTagList)
+                    {
+                        chests.Add(entity);
+                    }
+                }
+            }
+
+            return chests;
         }
 
     }

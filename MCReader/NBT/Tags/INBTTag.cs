@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -18,6 +19,7 @@ namespace MCReader.NBT.Tags
 
         public void Read(NBTReader r, bool noName = false);
 
+        [MethodImpl(Inline)]
         public static INBTTag Create(byte id, object data = null)
         {
             if (id == (int)TagType.TAG_Byte)
@@ -72,6 +74,7 @@ namespace MCReader.NBT.Tags
             return new TAG_End(data);
         }
 
+        [MethodImpl(Inline)]
         public static byte IDOf(INBTTag tag)
         {
             if (!Enum.TryParse(tag.GetType().Name, out TagType ret))

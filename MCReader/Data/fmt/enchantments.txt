@@ -1,0 +1,205 @@
+﻿This was generated in RLCraft 2.9.2d using CraftTweaker: https://docs.blamejared.com/1.12/en/Vanilla/Commands (/ct enchants)
+Enchants:
+somanyenchantments:pushing	Pushing	1	1	no	136
+somanyenchantments:fieryshield	Burning Shield I	1	4	no	123
+minecraft:sweeping	Sweeping Edge I	1	3	no	22
+minecraft:thorns	Thorns I	1	3	no	7
+somanyenchantments:pandora	Pandora's Curse	1	1	yes	142
+spartanweaponry:expanse	Expanse I	1	2	no	159
+mujmajnkraftsbettersurvival:assassinate	Assassinate I	1	3	no	171
+mujmajnkraftsbettersurvival:multishot	Multishot I	1	4	no	185
+somanyenchantments:advancedmending	Advanced Mending	1	1	yes	106
+somanyenchantments:advancedlure	Advanced Lure I	1	3	no	79
+somanyenchantments:tillingpower	Plowing I	1	2	no	129
+minecraft:frost_walker	Frost Walker I	1	2	yes	9
+somanyenchantments:rune_armorpiercing	Rune: Arrow Piercing I	1	4	no	127
+minecraft:efficiency	Efficiency I	1	5	no	32
+mujmajnkraftsbettersurvival:blast	Blast I	1	2	no	173
+mujmajnkraftsbettersurvival:bash	Bash I	1	3	no	172
+somanyenchantments:advancedlooting	Advanced Looting I	1	3	no	64
+somanyenchantments:raining	Rain's Bestowment I	1	6	no	54
+somanyenchantments:fieryedge	Fiery Edge I	1	2	no	30
+switchbow:activescope	Scope	1	1	no	166
+mujmajnkraftsbettersurvival:penetration	Penetration I	1	5	no	189
+spartanweaponry:propulsion	Propulsion I	1	3	no	153
+somanyenchantments:swiper	Arc Slash I	1	3	no	104
+minecraft:fortune	Fortune I	1	3	no	35
+minecraft:knockback	Knockback I	1	2	no	19
+somanyenchantments:underwaterstrider	Underwater Strider I	1	3	no	134
+somanyenchantments:advancedpunch	Advanced Punch I	1	2	no	78
+spartanweaponry:lucky_throw	Lucky Throw I	1	3	no	156
+somanyenchantments:ashdestroyer	Ash Destroyer I	1	5	no	68
+somanyenchantments:curseofvulnerability	Curse of Vulnerability I	1	4	yes	131
+somanyenchantments:upgrade	Upgraded Potentials	1	1	yes	116
+somanyenchantments:naturalblocking	Natural Blocking I	1	2	no	124
+somanyenchantments:reviledblade	Reviled Blade I	1	4	no	36
+mujmajnkraftsbettersurvival:reflection	Reflection I	1	3	no	180
+mujmajnkraftsbettersurvival:range	Range	1	1	no	186
+somanyenchantments:advancedbaneofarthropods	Advanced Bane of Arthropods I	1	5	no	27
+somanyenchantments:brutality	Brutality I	1	5	no	120
+minecraft:vanishing_curse	Curse of Vanishing	1	1	yes	71
+somanyenchantments:strengthenedvitality	Strengthened Vitality I	1	5	no	113
+somanyenchantments:advancedpower	Advanced Power I	1	5	no	75
+somanyenchantments:advancedprojectileprotection	Advanced Projectile Protection I	1	4	no	87
+somanyenchantments:sunshine	Sol's Blessing I	1	5	no	55
+somanyenchantments:defusion	Defusing Edge I	1	5	no	26
+mujmajnkraftsbettersurvival:heavy	Heaviness	1	1	no	177
+somanyenchantments:supremebaneofarthropods	Supreme Bane of Arthropods I	1	5	yes	97
+somanyenchantments:flinging	Flinging I	1	2	no	112
+somanyenchantments:parry	Parry	1	1	no	44
+grapplemod:wallrunenchantment	Wall Running	1	1	no	200
+mujmajnkraftsbettersurvival:tunneling	Tunneling I	1	2	no	181
+minecraft:depth_strider	Depth Strider I	1	3	no	8
+mujmajnkraftsbettersurvival:agility	Agility I	1	2	no	169
+mujmajnkraftsbettersurvival:arrowrecovery	Arrow Recovery I	1	3	no	170
+somanyenchantments:advancedfireprotection	Advanced Fire Protection I	1	4	no	85
+somanyenchantments:wateraspect	Water Aspect I	1	5	no	40
+somanyenchantments:swifterslashes	Swifter Slashes I	1	5	no	39
+locks:shocking	Shocking I	1	5	no	148
+switchbow:cooldownreduce	Reduce Cooldown I	1	5	no	167
+minecraft:protection	Protection I	1	4	no	0
+somanyenchantments:scythedamage	Jagged Rake I	1	5	no	117
+somanyenchantments:lessersharpness	Lesser Sharpness I	1	5	no	95
+somanyenchantments:atomicdeconstructor	Atomic Deconstructor I	1	2	no	91
+somanyenchantments:advancedefficency	Advanced Efficiency I	1	5	no	15
+somanyenchantments:mortalitas	Mortalitas I	1	8	no	41
+mujmajnkraftsbettersurvival:highjump	High Jump I	1	2	no	178
+minecraft:flame	Flame	1	1	no	50
+somanyenchantments:afl	Advanced Flame	1	1	no	108
+minecraft:projectile_protection	Projectile Protection I	1	4	no	4
+somanyenchantments:curseofinaccuracy	Curse of Inaccuracy I	1	2	yes	126
+spartanweaponry:hydrodynamic	Hydrodynamic	1	1	no	157
+somanyenchantments:butchering	Butchering I	1	5	no	24
+simpledifficulty:heating	Heating	1	1	no	152
+mujmajnkraftsbettersurvival:vampirism	Vampirism I	1	2	no	168
+defiledlands:sharpshooter	Precision I	1	3	no	143
+locks:sturdy	Sturdy I	1	3	no	149
+somanyenchantments:criticalstrike	Critical Strike I	1	4	no	63
+somanyenchantments:disarmament	Disarmament I	1	5	no	92
+somanyenchantments:lesserbaneofarthropods	Lesser Bane of Arthropods I	1	5	no	96
+somanyenchantments:levitator	Levitator I	1	2	no	65
+minecraft:unbreaking	Unbreaking I	1	3	no	34
+somanyenchantments:frenzy	Unreasonable I	1	2	no	135
+switchbow:pullspeed	Pull-Speed I	1	3	no	165
+spartanweaponry:spreadshot	Spreadshot	1	1	no	162
+somanyenchantments:advancedprotection	Advanced Protection I	1	4	no	84
+mujmajnkraftsbettersurvival:vitality	Vitality I	1	0	no	191
+minecraft:power	Power I	1	5	no	48
+somanyenchantments:inhumane	Inhumane I	1	5	no	122
+simpledifficulty:chilling	Chilling	1	1	no	151
+somanyenchantments:heavyweight	Heavy Weight I	1	5	yes	12
+minecraft:blast_protection	Blast Protection I	1	4	no	3
+spartanweaponry:rapid_load	Rapid Load I	1	3	no	161
+grapplemod:slidingenchantment	Sliding	1	1	no	202
+somanyenchantments:advancedknockback	Advanced Knockback I	1	2	no	43
+mujmajnkraftsbettersurvival:combo	Combo I	1	3	no	175
+minecraft:silk_touch	Silk Touch	1	1	no	33
+spartanshields:ssenchspikes	Spikes I	1	3	no	164
+somanyenchantments:clearsky	Clearskies' Favor I	1	6	no	52
+somanyenchantments:afa	Advanced Fire Aspect I	1	2	no	102
+somanyenchantments:luckmagnification	Luck Magnification I	1	2	no	132
+somanyenchantments:hors_de_combat	Hors De Combat I	1	4	no	93
+minecraft:infinity	Infinity	1	1	no	51
+charm:curse_break	Curse Break	1	1	yes	193
+mujmajnkraftsbettersurvival:spellshield	Spellproof I	1	3	no	188
+somanyenchantments:rusted	Rusted I	1	3	yes	13
+somanyenchantments:darkshadows	Dark Shadows I	1	3	no	125
+defiledlands:blazing	Blazing	1	1	no	147
+somanyenchantments:sfa	Supreme Fire Aspect I	1	2	yes	101
+somanyenchantments:strafe	Strafe I	1	4	no	60
+mujmajnkraftsbettersurvival:weightless	Weightless	1	1	no	192
+somanyenchantments:empowereddefence	Empowered Defence I	1	2	no	59
+charm:harming_curse	Curse of Harming	1	1	yes	197
+somanyenchantments:sfl	Supreme Flame	1	1	yes	109
+minecraft:punch	Punch I	1	2	no	49
+mujmajnkraftsbettersurvival:fling	Fling I	1	2	no	190
+minecraft:sharpness	Sharpness I	1	5	no	16
+somanyenchantments:disorientation	Disorientating Blade I	1	4	no	72
+somanyenchantments:thunderstorm	Thunderstorm's Bestowment I	1	6	no	56
+minecraft:lure	Lure I	1	3	no	62
+spartanweaponry:sharpshooter	Sharpshooter I	1	3	no	163
+minecraft:fire_aspect	Fire Aspect I	1	2	no	20
+somanyenchantments:sharperedge	Reinforced Sharpness I	1	5	no	111
+spartanweaponry:supercharge	Supercharge I	1	2	no	158
+somanyenchantments:lfl	Lesser Flame	1	1	no	107
+minecraft:mending	Mending	1	1	yes	70
+somanyenchantments:advancedsharpness	Advanced Sharpness I	1	5	no	28
+somanyenchantments:unsheathing	Unsheathing	1	1	no	140
+somanyenchantments:lfa	Lesser Fire Aspect I	1	2	no	103
+mujmajnkraftsbettersurvival:rapidfire	Rapid Fire I	1	2	no	187
+minecraft:aqua_affinity	Aqua Affinity	1	1	no	6
+charm:magnetic	Magnetic	1	1	no	199
+charm:clumsiness_curse	Curse of Clumsiness	1	1	yes	195
+somanyenchantments:welltilled	Moisturized	1	1	no	115
+somanyenchantments:splitshot	Splitshot I	1	4	no	110
+somanyenchantments:pulling	Dragging I	1	2	no	137
+somanyenchantments:culling	Culling I	1	3	no	47
+somanyenchantments:evasion	Evasion	1	1	no	138
+somanyenchantments:viper	Viper I	1	5	no	74
+somanyenchantments:instability	Instability I	1	3	no	139
+somanyenchantments:purgingblade	Purging Blade I	1	5	no	73
+charm:homing	Homing	1	1	yes	198
+somanyenchantments:pe	Subject P.E. I	1	5	yes	90
+somanyenchantments:advancedluckofthesea	Advanced Luck of the Sea I	1	3	no	80
+somanyenchantments:purification	Purification I	1	5	no	31
+somanyenchantments:curseofdecay	Curse of Decay	1	1	yes	119
+somanyenchantments:smelter	Smelter	1	1	no	58
+somanyenchantments:advancedsmite	Advanced Smite I	1	5	no	29
+mujmajnkraftsbettersurvival:disarm	Disarm I	1	3	no	176
+somanyenchantments:burningthorns	Burning Thorns I	1	3	no	83
+somanyenchantments:lightweight	Light Weight I	1	3	no	133
+spartanweaponry:return	Return I	1	3	no	160
+somanyenchantments:moonlight	Lunar's Blessing I	1	5	no	53
+somanyenchantments:meltdown	Meltdown I	1	2	no	114
+somanyenchantments:blessededge	Blessed Edge I	1	5	no	23
+locks:complexity	Complexity I	1	3	no	150
+minecraft:luck_of_the_sea	Luck of the Sea I	1	3	no	61
+minecraft:feather_falling	Feather Falling I	1	4	no	2
+minecraft:binding_curse	Curse of Binding	1	1	yes	10
+somanyenchantments:truestrike	True Strike	1	1	no	141
+somanyenchantments:adept	Adept I	1	3	yes	118
+somanyenchantments:magicprotection	Magic Protection I	1	4	no	66
+mujmajnkraftsbettersurvival:education	Education I	1	3	no	183
+defiledlands:safeguard	Safeguard	1	1	no	146
+somanyenchantments:curseofholding	Curse of Holding I	1	2	yes	130
+somanyenchantments:science	Subject Science I	1	4	yes	88
+somanyenchantments:powerless	Powerless I	1	5	yes	77
+minecraft:smite	Smite I	1	5	no	17
+somanyenchantments:bluntness	Bluntness I	1	5	yes	14
+charm:haunting_curse	Curse of Haunting	1	1	yes	196
+somanyenchantments:supremesharpness	Supreme Sharpness I	1	5	yes	94
+somanyenchantments:lessersmite	Lesser Smite I	1	5	no	98
+defiledlands:economical	Economical I	1	4	no	144
+mujmajnkraftsbettersurvival:versatility	Versatility	1	1	no	184
+mujmajnkraftsbettersurvival:smelting	Smelting	1	1	no	182
+somanyenchantments:freezing	Freezing I	1	3	no	105
+somanyenchantments:winter	Winter's Grace I	1	6	no	57
+somanyenchantments:rune_piercingcapabilities	Rune: Piercing Capabilities I	1	4	no	37
+somanyenchantments:advancedblastprotection	Advanced Blast Protection I	1	4	no	86
+somanyenchantments:desolator	Desolator I	1	4	no	69
+somanyenchantments:english	Subject English I	1	4	yes	89
+spartanweaponry:razors_edge	Razors Edge I	1	5	no	154
+somanyenchantments:advancedthorns	Advanced Thorns I	1	3	no	82
+somanyenchantments:cursededge	Cursed Edge I	1	5	yes	25
+somanyenchantments:magmawalker	Magma Walker I	1	2	yes	121
+minecraft:fire_protection	Fire Protection I	1	4	no	1
+charm:rusting_curse	Curse of Rusting	1	1	yes	194
+defiledlands:destructive	Destructive I	1	5	no	145
+somanyenchantments:unpredictable	Unpredictable I	1	2	no	45
+somanyenchantments:envenomed	Envenomed I	1	3	no	76
+somanyenchantments:spellbreaker	Spell Breaker I	1	5	no	38
+somanyenchantments:curseofpossession	Curse of Possession	1	1	yes	100
+somanyenchantments:supremesmite	Supreme Smite I	1	5	yes	99
+minecraft:bane_of_arthropods	Bane of Arthropods I	1	5	no	18
+grapplemod:doublejumpenchantment	Double Jump	1	1	no	201
+somanyenchantments:innerberserk	Inner Berserk I	1	4	no	128
+somanyenchantments:lifesteal	Lifesteal I	1	2	no	46
+minecraft:looting	Looting I	1	3	no	21
+mujmajnkraftsbettersurvival:blockpower	Blocking Power I	1	3	no	174
+somanyenchantments:inefficent	Inefficient I	1	5	yes	11
+minecraft:respiration	Respiration I	1	3	no	5
+somanyenchantments:physicalprotection	Physical Protection I	1	4	no	67
+mujmajnkraftsbettersurvival:diamonds	Diamonds Everywhere I	1	3	no	179
+somanyenchantments:penetratingedge	Penetrating Edge I	1	6	no	42
+spartanweaponry:incendiary	Incendiary	1	1	no	155
+somanyenchantments:advancedfeatherfalling	Advanced Feather Falling I	1	4	no	81

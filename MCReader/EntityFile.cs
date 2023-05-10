@@ -11,23 +11,27 @@ namespace MCReader
     public class EntityFile
     {
         private BinaryReader br;
-        public EntityFile(Stream input)
+        public string folderPath;
+
+        public EntityFile(Stream input, string folderPath)
         {
             br = new BinaryReader(input);
+            this.folderPath = folderPath;
         }
 
-        public List<Chunk> ReadChunks()
+        public bool ReadChunks(out List<Chunk> generated)
         {
             List<Chunk> allChunks = new List<Chunk>();
+            generated = new List<Chunk>();
             for (int i = 0; i < 1024; i++)
             {
-                allChunks.Add(new Chunk());
+                allChunks.Add(new Chunk(false, this.folderPath));
             }
 
             if (br.BaseStream.Length == 0)
             {
                 Log("BinaryReader's base stream had a length of 0! Is file size 0?");
-                return allChunks;
+                return false;
             }
 
             int generatedCount = 0;
@@ -50,7 +54,6 @@ namespace MCReader
 
             Log("Got " + generatedCount + " locations and timestamps");
 
-            List<Chunk> generated = new List<Chunk>();
             foreach (var c in allChunks.OrderBy(o => o.location))
             {
                 if (c.location != 0)
@@ -70,16 +73,19 @@ namespace MCReader
 
                 byte compression = br.ReadByte();
 
-                //size = 8092 - 5;
-
                 byte[] buff = new byte[size];
                 br.Read(buff, 0, size);
-                c.Uncompress(buff);
+                if (!c.UncompressEntities(buff))
+                {
+                    Log("EntityFile.ReadChunks was called using region files instead of entity files!");
+                    return false;
+                    break;
+                }
 
                 //Log("Read chunk " + i);
             }
 
-            return generated;
+            return true;
         }
 
 
@@ -89,7 +95,18 @@ namespace MCReader
 
             foreach (Chunk c in list)
             {
-                TAG_Compound root = (TAG_Compound)(c.NBT[0]);
+                if (c.RegionNBT.Count == 0)
+                {
+                    continue;
+                }
+
+                TAG_Compound root = (TAG_Compound)(c.RegionNBT[0]);
+
+                if (c.IsPre_1_17)
+                {
+                    root = (TAG_Compound) ((List<INBTTag>) root.Data())[0];
+                }
+
                 object entityTag = root.GetChildData("Entities");
                 if (entityTag != null)
                 {
@@ -97,7 +114,6 @@ namespace MCReader
                     foreach (TAG_Compound entity in entityList)
                     {
                         string entityId = (string) entity.GetChildData("id");
-                        
                         if (StringsEqual(entityId, "minecraft:villager"))
                         {
                             Villager v = new Villager(entity);
@@ -109,5 +125,40 @@ namespace MCReader
 
             return villagers;
         }
+
+        public static List<TAG_Compound> GetAllEntities(List<Chunk> list, bool ignoreItems = true)
+        {
+            List<TAG_Compound> entities = new List<TAG_Compound>();
+            foreach (Chunk c in list)
+            {
+                if (c.RegionNBT.Count == 0)
+                {
+                    continue;
+                }
+
+                TAG_Compound root = (TAG_Compound)(c.RegionNBT[0]);
+
+                if (c.IsPre_1_17)
+                {
+                    root = (TAG_Compound)((List<INBTTag>)root.Data())[0];
+                }
+
+                object entityTag = root.GetChildData("Entities");
+                if (entityTag != null)
+                {
+                    var entityList = ((List<INBTTag>)entityTag).Cast<TAG_Compound>();
+                    foreach (TAG_Compound entity in entityList)
+                    {
+                        if (!(ignoreItems && StringsEqual((string)entity.GetChildData("id"), "minecraft:item")))
+                        {
+                            entities.Add(entity);
+                        }
+                    }
+                }
+            }
+
+            return entities;
+        }
+
     }
 }

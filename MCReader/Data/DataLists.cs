@@ -13,6 +13,8 @@ namespace MCReader.Data
         private static string EntityFile = @".\Data\fmt\entities.txt";
         private static string BlockFile = @".\Data\fmt\blocks.txt";
 
+        private static string EnchantFile = @".\Data\fmt\enchantments.txt";
+
         //  display_name, numeric_id, text_id
         public static List<Item> Items;
 
@@ -22,11 +24,15 @@ namespace MCReader.Data
         //  display_name, numeric_id, text_id
         public static List<Block> Blocks;
 
+        public static List<Enchantment> Enchantments;
+
         static DataLists()
         {
+            //-<enchantment:somanyenchantments:pushing> - Pushing (at level 1, max level 1, treasure: no, enchant id 136)
             Items = new List<Item>();
             Entities = new List<Entity>();
             Blocks = new List<Block>();
+            Enchantments = new List<Enchantment>();
 
             MakeLists();
         }
@@ -56,6 +62,18 @@ namespace MCReader.Data
             }
 
             Log("Loaded " + Blocks.Count + " blocks");
+
+            //  -<enchantment:(.+)> - (.+) \(at level (\d+), max level (\d+), treasure: (\w+), enchant id (.+)\)
+            //  $1\t$2\t$3\t$4\t$5\t$6
+
+            foreach (string line in File.ReadAllLines(EnchantFile).Skip(2))
+            {
+                string[] splits = line.Split('\t');
+                Enchantment ench = new Enchantment(splits[0], splits[1], int.Parse(splits[2]), int.Parse(splits[3]), (splits[4] == "yes"), int.Parse(splits[5]));
+                Enchantments.Add(ench);
+            }
+
+            Log("Loaded " + Blocks.Count + " enchantments");
 
         }
 

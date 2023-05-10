@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace MCReader.NBT
 {
@@ -19,6 +20,7 @@ namespace MCReader.NBT
             br = new BinaryReader(input);
         }
 
+        [MethodImpl(Inline)]
         public List<INBTTag> ReadAll()
         {
             List<INBTTag> list = new List<INBTTag>();
@@ -32,6 +34,7 @@ namespace MCReader.NBT
             return list;
         }
 
+        [MethodImpl(Inline)]
         public INBTTag ReadNext()
         {
             try
@@ -54,16 +57,19 @@ namespace MCReader.NBT
                 }
                 else
                 {
-                    Log(e.ToString());
+                    Log("ReadNext() failed -> " + e.ToString());
                 }
             }
             return INBTTag.END;
         }
 
+        [MethodImpl(Inline)]
         public byte ReadByte() => br.ReadByte();
 
+        [MethodImpl(Inline)]
         public sbyte ReadSByte() => br.ReadSByte();
 
+        [MethodImpl(Inline)]
         public ushort ReadUShort()
         {
             byte[] arr = br.ReadBytes(2);
@@ -71,6 +77,7 @@ namespace MCReader.NBT
             return BitConverter.ToUInt16(arr);
         }
 
+        [MethodImpl(Inline)]
         public short ReadShort()
         {
             byte[] arr = br.ReadBytes(2);
@@ -78,6 +85,7 @@ namespace MCReader.NBT
             return BitConverter.ToInt16(arr);
         }
 
+        [MethodImpl(Inline)]
         public int ReadInt()
         {
             byte[] arr = br.ReadBytes(4);
@@ -85,6 +93,7 @@ namespace MCReader.NBT
             return BitConverter.ToInt32(arr);
         }
 
+        [MethodImpl(Inline)]
         public long ReadLong()
         {
             byte[] arr = br.ReadBytes(8);
@@ -92,6 +101,7 @@ namespace MCReader.NBT
             return BitConverter.ToInt64(arr);
         }
 
+        [MethodImpl(Inline)]
         public float ReadFloat()
         {
             byte[] arr = br.ReadBytes(4);
@@ -99,6 +109,7 @@ namespace MCReader.NBT
             return BitConverter.ToSingle(arr);
         }
 
+        [MethodImpl(Inline)]
         public double ReadDouble()
         {
             byte[] arr = br.ReadBytes(8);
@@ -106,6 +117,7 @@ namespace MCReader.NBT
             return BitConverter.ToDouble(arr);
         }
 
+        [MethodImpl(Inline)]
         public byte[] ReadByteArray()
         {
             int size = ReadInt();
@@ -113,6 +125,7 @@ namespace MCReader.NBT
             return arr;
         }
 
+        [MethodImpl(Inline)]
         public string ReadString()
         {
             ushort length = ReadUShort();
@@ -121,6 +134,7 @@ namespace MCReader.NBT
             return utf8;
         }
 
+        [MethodImpl(Inline)]
         public List<INBTTag> ReadList()
         {
             byte id = ReadByte();
@@ -141,6 +155,7 @@ namespace MCReader.NBT
             return list;
         }
 
+        [MethodImpl(Inline)]
         public List<INBTTag> ReadCompound()
         {
             List<INBTTag> list = new List<INBTTag>();
@@ -157,6 +172,7 @@ namespace MCReader.NBT
             return list;
         }
 
+        [MethodImpl(Inline)]
         public TAG_Int[] ReadIntArray()
         {
             int size = ReadInt();
@@ -171,6 +187,7 @@ namespace MCReader.NBT
             return arr;
         }
 
+        [MethodImpl(Inline)]
         public TAG_Long[] ReadLongArray()
         {
             int size = ReadInt();

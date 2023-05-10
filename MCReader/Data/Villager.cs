@@ -8,7 +8,8 @@ namespace MCReader.Data
 {
     public class Villager
     {
-        private static string[] LevelStrings = new string[] { "", "Novice", "Apprentice", "Journeyman", "Expert", "Master" };
+        //  Villagers that haven't been talked to yet might have a level of 0.  
+        private static string[] LevelStrings = new string[] { "Unmet", "Novice", "Apprentice", "Journeyman", "Expert", "Master" };
 
         public string profession;
         public string CustomName;
@@ -22,6 +23,9 @@ namespace MCReader.Data
 
         public List<TAG_Compound> Offers = new List<TAG_Compound>();
         private TAG_Compound _tag;
+
+        public TAG_Compound NBT_tag => _tag;
+
 
         public Villager(TAG_Compound tag) 
         {
@@ -38,6 +42,18 @@ namespace MCReader.Data
                 profession = (string)VillagerData.GetChildData("profession");
                 level = (int) VillagerData.GetChildData("level");
             }
+            else
+            {
+                //  For Forge 1.12.2
+                profession = (string)tag.GetChildData("ProfessionName");
+                level = (int)tag.GetChildData("CareerLevel");
+
+                //  Cartographers are distinguished from librarians by their 'Career' tag being 2, instead of 1
+                if (profession == "minecraft:librarian" && tag.GetChildData("Career") != null && ((int)tag.GetChildData("Career") == 2))
+                {
+                    profession = "minecraft:cartographer";
+                }
+            }
 
             var offers = tag.GetChildData("Offers");
             if (offers != null)
@@ -50,19 +66,40 @@ namespace MCReader.Data
             _tag = tag;
         }
 
-        public string GetTradeItemEnchants(TAG_Compound itTag)
+        public static string GetItemEnchantments(TAG_Compound itTag)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("(Enchantments: ");
 
             //  For enchantment book enchantments.
             object enchants = itTag.GetChildData("StoredEnchantments");
+
+            if (enchants == null)
+            {
+                //  For Forge 1.12.2
+                enchants = itTag.GetChildData("ench");
+            }
+
             if (enchants != null)
             {
                 List<INBTTag> enchantments = (List<INBTTag>)enchants;
                 foreach (TAG_Compound bookEnchant in enchantments)
                 {
-                    sb.Append(bookEnchant.GetChildData("id") + " " + bookEnchant.GetChildData("lvl") + ", ");
+                    object en = bookEnchant.GetChildData("id");
+                    short enchId = -1;
+                    if (en.GetType() == typeof(short))
+                    {
+                        enchId = (short)en;
+                    }
+                    var matchingEnchants = DataLists.Enchantments.Where(x => x.id == enchId).ToArray();
+                    if (matchingEnchants.Length > 0)
+                    {
+                        sb.Append(matchingEnchants[0].internalName + " " + bookEnchant.GetChildData("lvl") + ", ");
+                    }
+                    else
+                    {
+                        sb.Append(enchId + " " + bookEnchant.GetChildData("lvl") + ", ");
+                    }
                 }
                 sb.Remove(sb.Length - 2, 2);
             }
@@ -75,13 +112,23 @@ namespace MCReader.Data
                     List<INBTTag> enchantments = (List<INBTTag>)enchants;
                     foreach (TAG_Compound bookEnchant in enchantments)
                     {
-                        sb.Append(bookEnchant.GetChildData("id") + " " + bookEnchant.GetChildData("lvl") + ", ");
+                        short enchId = (short)bookEnchant.GetChildData("id");
+                        var matchingEnchants = DataLists.Enchantments.Where(x => x.id == enchId).ToArray();
+                        if (matchingEnchants.Length > 0)
+                        {
+                            sb.Append(matchingEnchants[0].internalName + " " + bookEnchant.GetChildData("lvl") + ", ");
+                        }
+                        else
+                        {
+                            sb.Append(enchId + " " + bookEnchant.GetChildData("lvl") + ", ");
+                        }
                     }
                     sb.Remove(sb.Length - 2, 2);
                 }
                 else
                 {
                     Log("GetTradeItemEnchants didn't have a tag for 'StoredEnchantments' or 'Enchantments' when it should have: " + itTag.ToString());
+
                 }
             }
 
@@ -112,17 +159,17 @@ namespace MCReader.Data
                 TAG_Compound itTag = (TAG_Compound) buy.GetChildTag("tag");
                 if (itTag != null)
                 {
-                    sb.Append(GetTradeItemEnchants(itTag));
+                    sb.Append(GetItemEnchantments(itTag));
                 }
 
                 //  If a villager only wants 1 item, the game treats them as also wanting "Count:0" of "minecraft:air"
-                if ((sbyte)buyB.GetChildData("Count") != 0 && !StringsEqual((string) buyB.GetChildData("id"), "minecraft:air"))
+                if (buyB != null && (sbyte)buyB.GetChildData("Count") != 0 && !StringsEqual((string) buyB.GetChildData("id"), "minecraft:air"))
                 {
                     sb.Append(" + " + (sbyte)buyB.GetChildData("Count") + " " + buyB.GetChildData("id"));
                     itTag = (TAG_Compound)buyB.GetChildTag("tag");
                     if (itTag != null)
                     {
-                        sb.Append(GetTradeItemEnchants(itTag));
+                        sb.Append(GetItemEnchantments(itTag));
                     }
                 }
 
@@ -131,7 +178,7 @@ namespace MCReader.Data
                 itTag = (TAG_Compound)sell.GetChildTag("tag");
                 if (itTag != null)
                 {
-                    sb.Append(GetTradeItemEnchants(itTag));
+                    sb.Append(GetItemEnchantments(itTag));
                 }
 
                 list.Add(sb.ToString());
@@ -144,7 +191,7 @@ namespace MCReader.Data
         {
             if (!StringsEqual(profession, "minecraft:none"))
             {
-                return LevelStrings[level] + " " + profession + " at " + coordX.ToString("0.#") + ", " + coordY.ToString("0.#") + ", " + coordZ.ToString("0.#") + " has " + Offers.Count + " trades";
+                return (level < LevelStrings.Length ? (LevelStrings[level]) : ("Level " + level + "?")) + " " + profession + " at " + coordX.ToString("0.#") + ", " + coordY.ToString("0.#") + ", " + coordZ.ToString("0.#") + " has " + Offers.Count + " trades";
             }
             else
             {
